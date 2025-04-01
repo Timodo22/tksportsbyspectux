@@ -66,13 +66,34 @@
         
         .shape svg {
     fill: white;
+    
+}
+.header {
+    position: relative;
+    overflow: hidden;
 }
 
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    /* bestaande overlay stijlen behouden */
+    position: relative;
+    z-index: 1;
+}
         
     </style>
     
     <!-- Page Header -->
     <header class="header">
+        <img src="assets/imgs/header.jpg" alt="Background" class="header-bg">
         <div class="overlay">
             <h1 class="subtitle">next event:</h1>
             <h1 class="title" id="countdown-timer">Loading...</h1>
@@ -82,8 +103,6 @@
             <svg viewBox="0 0 1500 200" style="color: white;">
                 <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z" fill="white"/>
             </svg>
-            
-            
         </div>  
     </header>
     
