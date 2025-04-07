@@ -34,6 +34,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Events.html">Events</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                    </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -48,22 +52,25 @@
     <!-- End Of Second Navigation -->
 
     <style>
-    
-        .btn-signup {
-            padding: 12px 30px;
-            border: 2px solid white;
-            background: transparent;
-            color: white;
-            border-radius: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-        }
-    
-        .btn-signup:hover {
-            background: white;
-            color: black;
-        }
+.btn-signup {
+    padding: 16px 40px;
+    border: none;
+    background-color: #ff6e42;
+    color: white;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-signup:hover {
+    background-color: #e55c32;
+    color: white;
+}
+
         
         .shape svg {
     fill: white;
@@ -98,6 +105,7 @@
         <div class="overlay">
             <h1 class="subtitle">next event:</h1>
             <h1 class="title" id="countdown-timer">Loading...</h1>
+            <h1 class="subtitle">May vacation ice hockey camp</h1>
             <a href="Form.html" class="btn-signup">Sign Up</a>  
         </div>  
         <div class="shape">
@@ -142,7 +150,7 @@
 <!-- Service Section transformed to "What Makes It Special" -->
 <section id="service" style="background-color: #fff;" class="section pt-0">
     <div class="container" style="margin-top: 0;">
-        <h6 class="section-title text-center" style="color: #444;;">Our recipe for <span class="highlight-text">YOUR</span> success</h6>
+        <h6 class="section-title text-center" style="color: #444;">Our recipe for <span class="highlight-text">YOUR</span> success</h6>
         <h6 class="section-subtitle text-center mb-5 pb-3" style="color: #444;">What Makes It Special</h6>
 
         <!-- Mobile Progress Bar (only visible on small screens) -->
@@ -157,31 +165,41 @@
             <div class="col-md-8 special-content">
                 <!-- Item 1 -->
                 <div class="special-item" id="item1">
-                    <h3 class="special-title">Boost Your Skills</h3>
-                    <p class="special-text">Enhance your capabilities through our comprehensive training programs designed to elevate your performance. Our expert instructors provide personalized guidance tailored to your specific needs and goals, ensuring rapid and sustainable progress.</p>
-                    <p class="special-text">With our specialized approach, you'll develop technical proficiency and creative problem-solving abilities that are essential for success in today's competitive environment. Our curriculum is regularly updated to reflect the latest industry trends and innovations.</p>
-                    <p class="special-text">Whether you're a beginner looking to establish a solid foundation or an experienced professional aiming to refine your expertise, our skill-boosting programs offer the perfect blend of theoretical knowledge and practical application.</p>
-                    <a href="#" class="btn btn-outline-primary learn-more-btn">Learn More</a>
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Boost Your Skills</h3>
+                        <p class="special-text">Enhance your capabilities through our comprehensive training programs designed to elevate your performance. Our expert instructors provide personalized guidance tailored to your specific needs and goals, ensuring rapid and sustainable progress.</p>
+                        <p class="special-text">With our specialized approach, you'll develop technical proficiency and creative problem-solving abilities that are essential for success in today's competitive environment. Our curriculum is regularly updated to reflect the latest industry trends and innovations.</p>
+                        <p class="special-text">Whether you're a beginner looking to establish a solid foundation or an experienced professional aiming to refine your expertise, our skill-boosting programs offer the perfect blend of theoretical knowledge and practical application.</p>
+                        <a href="about-us.html#item1" class="btn btn-outline-light learn-more-btn">Learn More</a>
+                    </div>
                 </div>
 
                 <!-- Item 2 -->
                 <div class="special-item" id="item2">
-                    <h3 class="special-title">Strength and Conditioning</h3>
-                    <p class="special-text">Our specialized strength and conditioning programs help you build not just physical power, but mental resilience. Develop functional strength that translates to improved performance in all aspects of your discipline while preventing injuries.</p>
-                    <p class="special-text">We utilize a combination of traditional and innovative techniques to help you achieve optimal results. Our holistic approach addresses all components of fitness, including muscular strength, cardiovascular endurance, flexibility, and neuromuscular coordination.</p>
-                    <p class="special-text">Each session is meticulously designed to challenge you appropriately, ensuring consistent progress without overtraining. Our experienced coaches monitor your form and technique, providing immediate feedback and adjustments to maximize efficiency and safety.</p>
-                    <a href="#" class="btn btn-outline-primary learn-more-btn">Learn More</a>
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Strength and Conditioning</h3>
+                        <p class="special-text">Our specialized strength and conditioning programs help you build not just physical power, but mental resilience. Develop functional strength that translates to improved performance in all aspects of your discipline while preventing injuries.</p>
+                        <p class="special-text">We utilize a combination of traditional and innovative techniques to help you achieve optimal results. Our holistic approach addresses all components of fitness, including muscular strength, cardiovascular endurance, flexibility, and neuromuscular coordination.</p>
+                        <p class="special-text">Each session is meticulously designed to challenge you appropriately, ensuring consistent progress without overtraining. Our experienced coaches monitor your form and technique, providing immediate feedback and adjustments to maximize efficiency and safety.</p>
+                        <a href="about-us.html#item2" class="btn btn-outline-light learn-more-btn">Learn More</a>
+                    </div>
                 </div>
 
                 <!-- Item 3 -->
                 <div class="special-item" id="item3">
-                    <h3 class="special-title">Gain Specialist Knowledge</h3>
-                    <p class="special-text">Access exclusive insights and cutting-edge techniques from industry leaders. Our curriculum incorporates the latest research and best practices, providing you with specialized knowledge that sets you apart in your field.</p>
-                    <p class="special-text">Through a combination of lectures, workshops, and hands-on sessions, you'll delve deep into advanced concepts that are rarely covered in conventional training programs. Our approach emphasizes practical application, ensuring that theoretical knowledge translates into tangible skills.</p>
-                    <p class="special-text">We maintain close relationships with industry pioneers and research institutions, giving you access to emerging methodologies before they become mainstream. This advantage allows you to stay ahead of trends and position yourself as an innovator in your professional community.</p>
-                    <a href="#" class="btn btn-outline-primary learn-more-btn">Learn More</a>
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Gain Specialist Knowledge</h3>
+                        <p class="special-text">Access exclusive insights and cutting-edge techniques from industry leaders. Our curriculum incorporates the latest research and best practices, providing you with specialized knowledge that sets you apart in your field.</p>
+                        <p class="special-text">Through a combination of lectures, workshops, and hands-on sessions, you'll delve deep into advanced concepts that are rarely covered in conventional training programs. Our approach emphasizes practical application, ensuring that theoretical knowledge translates into tangible skills.</p>
+                        <p class="special-text">We maintain close relationships with industry pioneers and research institutions, giving you access to emerging methodologies before they become mainstream. This advantage allows you to stay ahead of trends and position yourself as an innovator in your professional community.</p>
+                        <a href="about-us.html#item3" class="btn btn-outline-light learn-more-btn">Learn More</a>
+                    </div>
                 </div>
             </div>
+
 
             <!-- Progress Circle (only visible on medium screens and up) -->
             <div class="col-md-4 d-none d-md-block">
@@ -191,12 +209,25 @@
                             <circle cx="100" cy="100" r="90" fill="none" stroke="#e6e6e6" stroke-width="12" />
                             <circle cx="100" cy="100" r="90" fill="none" stroke="#ff8800" stroke-width="12" stroke-dasharray="565.5" stroke-dashoffset="377" class="progress-circle-path" id="circle-progress" />
                         </svg>
-                        <div class="progress-text" hidden>
-                            <span id="progress-fraction">1/3</span>
+                        <div class="progress-text">
+                            <!-- Item 1: Upward Progress Arrow -->
+                            <div class="circle-icon" id="icon-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/> </svg>
+                                  
+                            </div>
+                            <!-- Item 2: Gym Weight/Dumbbell Icon -->
+                            <div class="circle-icon" id="icon-2" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M104 96h-48C42.75 96 32 106.8 32 120V224C14.33 224 0 238.3 0 256c0 17.67 14.33 32 31.1 32L32 392C32 405.3 42.75 416 56 416h48C117.3 416 128 405.3 128 392v-272C128 106.8 117.3 96 104 96zM456 32h-48C394.8 32 384 42.75 384 56V224H256V56C256 42.75 245.3 32 232 32h-48C170.8 32 160 42.75 160 56v400C160 469.3 170.8 480 184 480h48C245.3 480 256 469.3 256 456V288h128v168c0 13.25 10.75 24 24 24h48c13.25 0 24-10.75 24-24V56C480 42.75 469.3 32 456 32zM608 224V120C608 106.8 597.3 96 584 96h-48C522.8 96 512 106.8 512 120v272c0 13.25 10.75 24 24 24h48c13.25 0 24-10.75 24-24V288c17.67 0 32-14.33 32-32C640 238.3 625.7 224 608 224z"/></svg>
+                            </div>
+                            <!-- Item 3: Side View of Brain Icon -->
+                            <div class="circle-icon" id="icon-3" style="display: none;">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M3.33 8L10 12l10-6-10-6L0 6h10v2H3.33zM0 8v8l2-2.22V9.2L0 8zm10 12l-5-3-2-1.2v-6l7 4.2 7-4.2v6L10 20z"/></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        
         </div>
     </div>
 </section>
@@ -219,27 +250,67 @@
         position: relative;
     }
 
-/* Special Content Styling */
-.special-item {
-    padding: 10px 0; /* Verklein de padding boven en onder */
-    min-height: 80vh; /* Verkorte hoogte per item */
-    border-bottom: 1px solid #eee;
-}
+    /* Special Item Styling with Background Images */
+    .special-item {
+        position: relative;
+        padding: 40px 20px;
+        min-height: 80vh;
+        border-bottom: 1px solid #eee;
+        color: #fff;
+        overflow: hidden;
+    }
 
-.special-item:last-child {
-    border-bottom: none;
-}
+    .special-item:last-child {
+        border-bottom: none;
+    }
 
+    .item-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        z-index: 0;
+    }
+
+    #item1 .item-background {
+        background-image: url(assets/imgs/section.jpg);
+    }
+
+    #item2 .item-background {
+        background-image: url('https://placehold.it/1920x1080/222/888?text=Strength');
+    }
+
+    #item3 .item-background {
+        background-image: url('https://placehold.it/1920x1080/111/777?text=Knowledge');
+    }
+
+    .item-background:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .item-content {
+        position: relative;
+        z-index: 1;
+    }
 
     .special-title {
-        color: #444;
+        color: #fff;
         margin-bottom: 30px;
         font-weight: 600;
         font-size: 2rem;
     }
 
     .special-text {
-        color: #666;
+        color: #f0f0f0;
         margin-bottom: 25px;
         line-height: 1.7;
         font-size: 1.1rem;
@@ -250,6 +321,7 @@
         border-radius: 30px;
         transition: all 0.3s ease;
         font-size: 1.1rem;
+        border-color: #fff;
     }
 
     .learn-more-btn:hover {
@@ -268,7 +340,6 @@
         padding: 5px 0;
         background-color: rgba(255, 255, 255, 0.95);
         box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        display: none;
     }
     
     .progress {
@@ -286,7 +357,7 @@
     /* Progress Circle for Tablet and Desktop */
     .progress-circle-container {
         position: sticky;
-        top: 40%;
+        top: 30%; /* Eerder sticky worden */
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -309,15 +380,35 @@
         transition: stroke-dashoffset 0.5s ease;
     }
 
-    .progress-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-    }
+/* Updated Progress Circle Styling */
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    text-align: center;
+}
+
+.circle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.circle-icon svg {
+    transform: none; /* Reset any previous transform */
+    width: 50px;
+    height: 50px;
+    color: #333;
+}
+
+/* Remove fraction display from JavaScript */
+#progress-fraction {
+    display: none;
+}
 
     /* Responsive Adjustments */
     @media (max-width: 767px) {
@@ -333,6 +424,10 @@
         .special-text {
             font-size: 1rem;
         }
+        .col-md-8 {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 </style>
 
@@ -344,6 +439,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileProgress = document.getElementById('mobile-progress');
     const circleProgress = document.getElementById('circle-progress');
     const progressFraction = document.getElementById('progress-fraction');
+    const progressCircleContainer = document.querySelector('.progress-circle-container');
+    
+    // Icons
+    const icon1 = document.getElementById('icon-1');
+    const icon2 = document.getElementById('icon-2');
+    const icon3 = document.getElementById('icon-3');
     
     // Constants for the circle
     const circleRadius = 90;
@@ -355,22 +456,26 @@ document.addEventListener('DOMContentLoaded', function() {
     updateProgress(0);
     
     // Function to update progress indicators
-    function updateProgress(index) {
-        // Update active index
-        activeIndex = index;
-        
-        // Update mobile progress bar
-        const mobileProgressValue = ((index + 1) / items.length) * 100;
-        mobileProgress.style.width = mobileProgressValue + '%';
-        mobileProgress.setAttribute('aria-valuenow', mobileProgressValue);
-        
-        // Update circle progress
-        const offset = circumference - ((index + 1) / items.length) * circumference;
-        circleProgress.style.strokeDashoffset = offset;
-        
-        // Update fraction text
-        progressFraction.textContent = (index + 1) + '/' + items.length;
-    }
+
+// Function to update progress indicators
+function updateProgress(index) {
+    // Update active index
+    activeIndex = index;
+    
+    // Update mobile progress bar
+    const mobileProgressValue = ((index + 1) / items.length) * 100;
+    mobileProgress.style.width = mobileProgressValue + '%';
+    mobileProgress.setAttribute('aria-valuenow', mobileProgressValue);
+    
+    // Update circle progress
+    const offset = circumference - ((index + 1) / items.length) * circumference;
+    circleProgress.style.strokeDashoffset = offset;
+    
+    // Update icons - show only the current one
+    icon1.style.display = index === 0 ? 'block' : 'none';
+    icon2.style.display = index === 1 ? 'block' : 'none';
+    icon3.style.display = index === 2 ? 'block' : 'none';
+}
     
     // Use Intersection Observer to detect which item is in view
     const observer = new IntersectionObserver((entries) => {
@@ -386,22 +491,49 @@ document.addEventListener('DOMContentLoaded', function() {
     
     items.forEach(item => observer.observe(item));
     
+    // Controleer de zichtbaarheid van de voortgangscirkel
+    function checkCircleVisibility() {
+        const lastItem = items[items.length - 1];
+        const lastItemRect = lastItem.getBoundingClientRect();
+        const sectionRect = section.getBoundingClientRect();
+        
+        // Als we voorbij de onderkant van item 3 zijn, verberg de cirkel
+        if (lastItemRect.bottom < window.innerHeight / 2) {
+            progressCircleContainer.style.opacity = '0';
+            progressCircleContainer.style.pointerEvents = 'none';
+        } 
+        // Toon de cirkel alleen als we binnen de sectie zijn
+        else if (sectionRect.top <= 0 && sectionRect.bottom >= 0) {
+            progressCircleContainer.style.opacity = '1';
+            progressCircleContainer.style.pointerEvents = 'auto';
+        } else {
+            progressCircleContainer.style.opacity = '0';
+            progressCircleContainer.style.pointerEvents = 'none';
+        }
+    }
+    
     // Check if mobile progress bar should be visible
     function checkMobileProgressVisibility() {
         const mobileProgressContainer = document.querySelector('.mobile-progress-container');
         const sectionRect = section.getBoundingClientRect();
+        const lastItemRect = items[items.length - 1].getBoundingClientRect();
         
-        if (sectionRect.top <= 0 && sectionRect.bottom >= 0) {
-            mobileProgressContainer.classList.add('visible');
+        // Toon de mobile progress bar alleen binnen de sectie en niet voorbij item 3
+        if (sectionRect.top <= 0 && sectionRect.bottom >= 0 && lastItemRect.bottom >= window.innerHeight / 2) {
+            mobileProgressContainer.style.display = 'block';
         } else {
-            mobileProgressContainer.classList.remove('visible');
+            mobileProgressContainer.style.display = 'none';
         }
     }
     
-    // Handle scroll events for mobile progress visibility
-    window.addEventListener('scroll', checkMobileProgressVisibility);
+    // Event listener voor scroll events
+    window.addEventListener('scroll', function() {
+        checkCircleVisibility();
+        checkMobileProgressVisibility();
+    });
     
     // Initial check
+    checkCircleVisibility();
     checkMobileProgressVisibility();
 });
 </script>

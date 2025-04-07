@@ -34,6 +34,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Events.html">Events</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                    </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -109,141 +113,262 @@
         </div>  
     </header>
 
-    <Style>
-#specialists .card {
-    border: 10px solid #ff6e42; /* Duidelijke oranje rand */
-    background-color: #2c2c2c; /* Donkergrijze achtergrond voor de kaart */
-    color: #ffffff; /* Witte tekstkleur voor de gehele kaart */
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    box-shadow: 0 10px 20px rgba(255, 127, 0, 0.5); /* Duidelijke oranje schaduw */
-}
-
-#specialists .card:hover {
-    transform: translateY(-10px); /* Voor subtiele hover-effect */
-    box-shadow: 0 15px 30px rgba(255, 127, 0, 0.7); /* Versterkte oranje schaduw bij hover */
-}
-
-#specialists .card-img-top {
-    height: 250px;
-    object-fit: cover;
-}
-
-#specialists .card-body {
-    padding: 25px;
-    text-align: center;
-    border: 4px solid #ff6e42;
-}
-
-#specialists .card-title {
-    font-size: 1.5rem;
-    color: #ff6e42; /* Oranje titelkleur */
-    font-weight: bold;
-}
-
-#specialists .card-text {
-    color: #ffffff; /* Witte tekstkleur voor de algemene tekst */
-}
-
-#specialists .card-text strong {
-    font-size: 1.1rem;
-    color: #ffffff; /* Witte kleur voor citaten */
-}
-
-#specialists .list-unstyled {
-    padding-left: 0;
-    list-style: none;
-}
-
-#specialists .list-unstyled li {
-    margin-bottom: 10px;
-}
-
-#specialists .list-unstyled li i {
-    margin-right: 10px;
-    color: #ff7f00; /* Oranje voor de icoontjes */
-}
-
-@media (max-width: 768px) {
-    #specialists .card-title {
-        font-size: 1.25rem;
-    }
-
-    #specialists .card-body {
-        padding: 15px;
-    }
-
-    #specialists .card-img-top {
-        height: 200px;
-    }
-}
-
-    </Style>
-    
-    <!-- Specialists Section -->
-<section id="specialists" class="section py-5" style="background-color: #fff;">
-    <div class="container">
-        <h2 class="text-center mb-5 text-primary">Meet Our Specialists</h2>
-        <div class="row">
+    <section id="specialists" class="section py-5">
+        <div class="container">
+          <h2 class="section-title text-center mb-5">Meet Our Specialists</h2>
+          
+          <div class="specialists-grid">
             <!-- Specialist 1 - Dominque Maan -->
-            <div class="col-md-4 mb-4" >
-                <div class="card shadow-sm border-0 rounded" >
-                    <img src="assets/imgs/dominque-maan.jpg" alt="Dominque Maan" class="card-img-top rounded-top">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-primary">Dominque Maan</h4>
-                        <p class="card-text text-muted">Dietitian | Specialist in Top Sport & Pediatrics</p>
-                        <p class="card-text text-dark">
-                            <strong>"In some cases, nutrition is more important than hard work"</strong>
-                        </p>
-                        <ul class="list-unstyled" style="color: #fff">
-                            <li><i class="fas fa-check-circle text-primary"></i> 10+ years experience in nutrition</li>
-                            <li><i class="fas fa-check-circle text-primary"></i> Works with the Ice Hockey Team NL</li>
-                            <li><i class="fas fa-check-circle text-primary"></i> Focus on athletes of young age</li>
-                        </ul>
-                    </div>
+            <div class="specialist-item">
+              <div class="specialist-content">
+                <div class="specialist-image-container">
+                  <img src="assets/imgs/section2.jpg" alt="Dominque Maan" class="specialist-image">
+                  <div class="specialist-overlay"></div>
                 </div>
+                <div class="specialist-info">
+                  <h3 class="specialist-name">Dominque Maan</h3>
+                  <p class="specialist-role">Dietitian | Specialist in Top Sport & Pediatrics</p>
+                  <div class="specialist-quote">
+                    <span class="quote-mark">"</span>In some cases, nutrition is more important than hard work<span class="quote-mark">"</span>
+                  </div>
+                  <div class="specialist-expertise">
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">10+ years experience in nutrition</span>
+                    </div>
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">Works with the Ice Hockey Team NL</span>
+                    </div>
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">Focus on athletes of young age</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             
             <!-- Specialist 2 - Ryszard Malag -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm border-0 rounded">
-                    <img src="assets/imgs/ryszard-malag.jpg" alt="Ryszard Malag" class="card-img-top rounded-top">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-primary">Ryszard Malag</h4>
-                        <p class="card-text text-muted">Performance & Mental Coach</p>
-                        <p class="card-text text-dark">
-                            <strong>"Mental resilience is very important to close the performance bridge from practice to competition"</strong>
-                        </p>
-                        <ul class="list-unstyled"  style="color: #fff">
-                            <li><i class="fas fa-check-circle text-primary"></i> 40 years of experience in sports psychology</li>
-                            <li><i class="fas fa-check-circle text-primary"></i> Experienced in ice hockey, handball, soccer & individual sports</li>
-                        </ul>
-                    </div>
+            <div class="specialist-item">
+              <div class="specialist-content">
+                <div class="specialist-image-container">
+                  <img src="assets/imgs/header.jpg" alt="Ryszard Malag" class="specialist-image">
+                  <div class="specialist-overlay"></div>
                 </div>
-            </div>
-
-            <!-- Specialist 3 (Placeholder for future specialist) -->
-            <div class="col-md-4 mb-4">
-                <div class="card shadow-sm border-0 rounded">
-                    <img src="assets/imgs/placeholder.jpg" alt="Specialist 3" class="card-img-top rounded-top">
-                    <div class="card-body text-center">
-                        <h4 class="card-title text-primary">Specialist 3</h4>
-                        <p class="card-text text-muted">Placeholder Bio</p>
-                        <p class="card-text text-dark">
-                            <strong>"Insert a quote here"</strong>
-                        </p>
-                        <ul class="list-unstyled"  style="color: #fff">
-                            <li><i class="fas fa-check-circle text-primary"></i> Add experience details</li>
-                            <li><i class="fas fa-check-circle text-primary"></i> Add additional achievements</li>
-                        </ul>
+                <div class="specialist-info">
+                  <h3 class="specialist-name">Ryszard Malag</h3>
+                  <p class="specialist-role">Performance & Mental Coach</p>
+                  <div class="specialist-quote">
+                    <span class="quote-mark">"</span>Mental resilience is very important to close the performance bridge from practice to competition<span class="quote-mark">"</span>
+                  </div>
+                  <div class="specialist-expertise">
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">40 years of experience in sports psychology</span>
                     </div>
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">Experienced in ice hockey, handball, soccer & individual sports</span>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-
+            
+            <!-- Specialist 3 (Placeholder) -->
+            <div class="specialist-item">
+              <div class="specialist-content">
+                <div class="specialist-image-container">
+                  <img src="assets/imgs/section.jpg" alt="Specialist 3" class="specialist-image">
+                  <div class="specialist-overlay"></div>
+                </div>
+                <div class="specialist-info">
+                  <h3 class="specialist-name">Specialist 3</h3>
+                  <p class="specialist-role">Placeholder Bio</p>
+                  <div class="specialist-quote">
+                    <span class="quote-mark">"</span>Insert a quote here<span class="quote-mark">"</span>
+                  </div>
+                  <div class="specialist-expertise">
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">Add experience details</span>
+                    </div>
+                    <div class="expertise-item">
+                      <span class="expertise-icon">✓</span>
+                      <span class="expertise-text">Add additional achievements</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </section>
+      
+      <!-- CSS for Specialists Section -->
+      <style>
+        /* Section styling */
+        #specialists {
+          background-color: white;
+          padding: 80px 0;
+        }
+        
+        .section-title {
+          font-size: 2.5rem;
+          margin-bottom: 3rem;
+          position: relative;
+          color: #333;
+          font-weight: 600;
+        }
+        
+        .section-title:after {
+          content: '';
+          position: absolute;
+          width: 80px;
+          height: 4px;
+          background-color: #ff6b00; /* Orange accent */
+          bottom: -15px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        /* Grid layout */
+        .specialists-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 40px;
+        }
+        
+        /* Specialist card styling */
+        .specialist-item {
+          position: relative;
+          transition: all 0.3s ease;
+        }
+        
+        .specialist-item:hover {
+          transform: translateY(-10px);
+        }
+        
+        .specialist-content {
+          background: white;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+          height: 100%;
+        }
+        
+        /* Image styling */
+        .specialist-image-container {
+          position: relative;
+          height: 280px;
+          overflow: hidden;
+        }
+        
+        .specialist-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+        
+        .specialist-item:hover .specialist-image {
+          transform: scale(1.05);
+        }
+        
+        .specialist-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 30%;
+          background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        
+        /* Info section */
+        .specialist-info {
+          padding: 25px;
+          position: relative;
+        }
+        
+        .specialist-name {
+          color: #333;
+          font-size: 1.5rem;
+          margin-bottom: 5px;
+          font-weight: 600;
+        }
+        
+        .specialist-role {
+          color: #666;
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          border-bottom: 1px solid #eee;
+        }
+        
+        /* Quote styling */
+        .specialist-quote {
+          background-color: #fff9f2;
+          border-left: 4px solid #ff6b00; /* Orange accent */
+          padding: 15px;
+          margin-bottom: 20px;
+          font-style: italic;
+          color: #333;
+          position: relative;
+        }
+        
+        .quote-mark {
+          color: #ff6b00; /* Orange accent */
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+        
+        /* Expertise list styling */
+        .specialist-expertise {
+          margin-top: 20px;
+        }
+        
+        .expertise-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 10px;
+        }
+        
+        .expertise-icon {
+          color: #ff6b00; /* Orange accent */
+          font-weight: bold;
+          margin-right: 10px;
+          font-size: 1.1rem;
+        }
+        
+        .expertise-text {
+          color: #555;
+          line-height: 1.4;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+          .specialists-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+          }
+        }
+        
+        @media (max-width: 576px) {
+          .specialists-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+          }
+          
+          .section-title {
+            font-size: 2rem;
+          }
+          
+          .specialist-image-container {
+            height: 240px;
+          }
+        }
+      </style>
 <!-- End of Specialists Section -->
 
     <!-- End of Testmonial Section -->

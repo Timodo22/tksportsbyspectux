@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your personal development with expierienced knowledge">
+    <meta name="author" content="Devcrud">
+    <meta name="theme-color" content="#ff6e42"/>
+    <title>Tk sports academy</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="assets/css/leadmark.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+        <div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 0; ">
+            <a class="navbar-brand" href="#">
+                <img src="assets/imgs/logo.svg" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Specialists.html">Specialists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <style>
+    
+        .btn-signup {
+            padding: 12px 30px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    
+        .btn-signup:hover {
+            background: white;
+            color: black;
+        }
+        
+        .shape svg {
+    fill: white;
+}
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    /* bestaande overlay stijlen behouden */
+    position: relative;
+    z-index: 1;
+}
+
+        
+    </style>
+    
+    <!-- Page Header -->
+    <header class="header">
+        <img src="assets/imgs/section2.jpg" alt="Background" class="header-bg">
+
+        <div class="overlay">
+            <h1 class="subtitle">Welcome to</h1>
+            <h1 class="title" id="countdown-timer">The sign up page</h1>
+            <!-- <a href="#signup" class="btn-signup">Sign Up</a>   -->
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200" style="color: white;">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z" fill="white"/>
+            </svg>
+            
+            
+        </div>  
+    </header>
+    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e05e00;
+            --secondary-color: #333;
+            --light-color: #fff;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            max-width: 1400px; /* Bredere container */
+        }
+        
+        /* Highlight text styling */
+        .highlight-text {
+            color: #ff6b00;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Special Content Styling */
+        .special-content-container {
+            position: relative;
+        }
+
+        .special-content {
+            position: relative;
+            width: 100%; /* Breder maken */
+        }
+
+        /* Special Item Styling with Background Images */
+        .special-item {
+            position: relative;
+            padding: 60px 40px;
+            min-height: 80vh;
+            border-bottom: 1px solid #eee;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .special-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        #item1 .item-background {
+            background-image: url(assets/imgs/section2.jpg);
+        }
+
+        #item2 .item-background {
+            background-image: url('https://placehold.it/1920x1080/222/888?text=Strength');
+        }
+
+        #item3 .item-background {
+            background-image: url('https://placehold.it/1920x1080/111/777?text=Knowledge');
+        }
+
+        .item-background:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .item-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .special-title {
+            color: #fff;
+            margin-bottom: 30px;
+            font-weight: 600;
+            font-size: 2.2rem;
+            border-left: 5px solid #ff6b00;
+            padding-left: 15px;
+        }
+
+        .special-text {
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .learn-more-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border-color: #ff6b00;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #ff6b00;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #ff6b00;
+            border-color: #ff6b00;
+            color: white;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: #ff6b00;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        /* About Us Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: white
+        }
+        
+        .founder-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .founder-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid #ff6b00;
+        }
+        
+        .founder-info {
+            padding: 25px;
+        }
+        
+        .founder-name {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .founder-title {
+            color: #ff6b00;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .founder-bio {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #ff6b00;
+            color: #fff;
+        }
+        
+        /* Orange accent elements */
+        .accent-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255,107,0,0.1);
+            z-index: 0;
+        }
+        
+        .accent-circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -50px;
+        }
+        
+        .accent-circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -100px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .special-item {
+                padding: 50px 20px;
+            }
+            
+            .special-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-section {
+                padding: 60px 0;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .special-item {
+                min-height: auto;
+                padding: 40px 15px;
+            }
+            
+            .special-title {
+                font-size: 1.5rem;
+            }
+            
+            .special-text {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            
+            .founder-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="about" class="about-section">
+        <div class="container-fluid">
+            <div class="position-relative">
+                <div class="accent-circle accent-circle-1"></div>
+                <div class="accent-circle accent-circle-2"></div>
+                
+                <h2 class="section-title text-center">Over Ons</h2>
+                <p class="section-subtitle text-center">Maak kennis met de oprichters van ons bedrijf</p>
+                
+                <div class="row">
+                    <!-- Founder 1 -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="founder-card">
+                            <img src="assets/imgs/section.jpg" alt="Oprichter 1" class="founder-img">
+                            <div class="founder-info">
+                                <h3 class="founder-name">Jan de Vries</h3>
+                                <p class="founder-title">Mede-oprichter & CEO</p>
+                                <p class="founder-bio">Met meer dan 15 jaar ervaring in de industrie, brengt Jan een unieke mix van technische expertise en zakelijk inzicht naar het bedrijf. Hij heeft zijn carrière gewijd aan het ontwikkelen van innovatieve oplossingen die bedrijven helpen om hun volledige potentieel te bereiken. Jan is gepassioneerd over het creëren van een cultuur van excellentie en continue verbetering.</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Founder 2 -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="founder-card">
+                            <img src="assets/imgs/section2.jpg" alt="Oprichter 2" class="founder-img">
+                            <div class="founder-info">
+                                <h3 class="founder-name">Laura Jansen</h3>
+                                <p class="founder-title">Mede-oprichter & COO</p>
+                                <p class="founder-bio">Laura brengt een schat aan ervaring in operationele excellentie en strategische planning. Met een achtergrond in zowel startups als gevestigde bedrijven, begrijpt ze de uitdagingen waarmee organisaties in verschillende groeifasen worden geconfronteerd. Laura's focus ligt op het bouwen van schaalbare systemen en processen die de groei van het bedrijf en zijn klanten ondersteunen.</p>
+                                <div class="social-links">
+                                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-link"><i class="far fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Our Recipe for Success Section -->
+<section id="service" class="section pt-5 pb-0">
+    <div class="container-fluid">
+        <h2 class="section-title text-center">Our recipe for <span class="highlight-text">YOUR</span> success</h2>
+        <p class="section-subtitle text-center">What Makes It Special</p>
+
+        <div class="special-content-container">
+            <!-- Special Content Items -->
+            <div class="special-content">
+                <!-- Item 1 -->
+                <div class="special-item" id="item1">
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Boost Your Skills</h3>
+                        <p class="special-text">Enhance your capabilities through our comprehensive training programs designed to elevate your performance. Our expert instructors provide personalized guidance tailored to your specific needs and goals, ensuring rapid and sustainable progress.</p>
+                        <p class="special-text">With our specialized approach, you'll develop technical proficiency and creative problem-solving abilities that are essential for success in today's competitive environment. Our curriculum is regularly updated to reflect the latest industry trends and innovations.</p>
+                        <p class="special-text">Whether you're a beginner looking to establish a solid foundation or an experienced professional aiming to refine your expertise, our skill-boosting programs offer the perfect blend of theoretical knowledge and practical application.</p>
+
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="special-item" id="item2">
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Strength and Conditioning</h3>
+                        <p class="special-text">Our specialized strength and conditioning programs help you build not just physical power, but mental resilience. Develop functional strength that translates to improved performance in all aspects of your discipline while preventing injuries.</p>
+                        <p class="special-text">We utilize a combination of traditional and innovative techniques to help you achieve optimal results. Our holistic approach addresses all components of fitness, including muscular strength, cardiovascular endurance, flexibility, and neuromuscular coordination.</p>
+                        <p class="special-text">Each session is meticulously designed to challenge you appropriately, ensuring consistent progress without overtraining. Our experienced coaches monitor your form and technique, providing immediate feedback and adjustments to maximize efficiency and safety.</p>
+
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="special-item" id="item3">
+                    <div class="item-background"></div>
+                    <div class="item-content">
+                        <h3 class="special-title">Gain Specialist Knowledge</h3>
+                        <p class="special-text">Access exclusive insights and cutting-edge techniques from industry leaders. Our curriculum incorporates the latest research and best practices, providing you with specialized knowledge that sets you apart in your field.</p>
+                        <p class="special-text">Through a combination of lectures, workshops, and hands-on sessions, you'll delve deep into advanced concepts that are rarely covered in conventional training programs. Our approach emphasizes practical application, ensuring that theoretical knowledge translates into tangible skills.</p>
+                        <p class="special-text">We maintain close relationships with industry pioneers and research institutions, giving you access to emerging methodologies before they become mainstream. This advantage allows you to stay ahead of trends and position yourself as an innovator in your professional community.</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+
+
+<!-- Font Awesome voor sociale media iconen -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- End of Testmonial Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="section pb-0" style="position: relative; color: #fff;">
+        <!-- Background image -->
+        <img src="assets/imgs/section.jpg" alt="Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: 1;">
+        
+        <!-- Overlay div -->
+        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2;"></div>
+        
+        <div class="container" style="margin-bottom: 0; position: relative; z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-md-5 my-3">
+                    <h6 class="mb-0">Phone</h6>
+                    <p class="mb-4">+ 123-456-7890</p>
+    
+                    <h6 class="mb-0">Address</h6>
+                    <p class="mb-4">12345 Fake ST NoWhere AB Country</p>
+    
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-0">info@website.com</p>
+                    <p></p>
+                </div>
+                <div class="col-md-7">
+                    <form>
+                        <h4 class="mb-4">Contact us</h4>
+                        <div class="form-row">
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Name">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="email" class="form-control text-white rounded-0 bg-transparent" name="Email" placeholder="Email">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Subject">
+                            </div>
+                            <div class="form-group col-12">
+                                <textarea name="message" id="" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message"></textarea>
+                            </div>
+                            <div class="form-group col-12 mb-0">
+                                <button type="submit" class="btn btn-primary rounded w-md mt-3">Send</button>
+                            </div>                          
+                        </div>                          
+                    </form>
+                </div>
+            </div>
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, TKsports Acadamy Created By <a href="https://spectux.com" target="_blank">Spectux.com.</a>  All rights reserved </p>     
+            </footer>
+            <!-- End of Page Footer -->  
+        </div>
+    </section>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="assets/js/leadmark.js"></script>
+
+</body>
+</html>

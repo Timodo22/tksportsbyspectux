@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Start your personal development with expierienced knowledge">
     <meta name="author" content="Devcrud">
-    <meta name="theme-color" content="#ff6e42;"/>
+    <meta name="theme-color" content="#ff6e42"/>
     <title>Tk sports academy</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
@@ -35,6 +35,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Events.html">Events</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                    </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -109,6 +113,13 @@
         </div>  
     </header>
     
+
+</head>
+<body>
+
+<!-- Events Section -->
+
+
     <style>
         :root {
             --primary-color: #ff7a00;
@@ -120,6 +131,25 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+        
+        .col-lg-4 {
+            width: 33.33%;
+            padding: 0 15px;
+            margin-bottom: 30px;
         }
         
         /* Events Section Styling */
@@ -185,23 +215,72 @@
             to { opacity: 1; }
         }
         
-        .event-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-            height: 100%;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-5px);
-        }
+        /* Flip Card Styling */
+/* Flip Card Styling */
+.event-card-container {
+    perspective: 1000px;
+    height: 450px;
+    cursor: pointer;
+}
+
+.event-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.event-card-front, .event-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event-card-front {
+    background-color: white;
+    z-index: 2; /* Voegt duidelijkheid toe over welke kant moet worden getoond */
+}
+
+.event-card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Achterkant start achter de voorkant */
+}
         
         .event-image {
             height: 200px;
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        
+        .flip-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
         }
         
         .event-info {
@@ -237,6 +316,7 @@
             align-items: center;
             border-top: 1px solid #eee;
             padding-top: 15px;
+            margin-top: auto;
         }
         
         .event-details {
@@ -266,6 +346,7 @@
             cursor: pointer;
             transition: background-color 0.3s;
             text-decoration: none;
+            display: inline-block;
         }
         
         .event-btn:hover {
@@ -274,13 +355,106 @@
             text-decoration: none;
         }
         
-        .no-events {
+        /* Back Card Styling */
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .profile-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .profile-info h4 {
+            margin: 0 0 5px 0;
+            color: var(--dark-gray);
+        }
+        
+        .profile-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .back-details {
+            margin-bottom: 15px;
+        }
+        
+        .back-detail-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        
+        .back-detail-icon {
+            color: var(--primary-color);
+            margin-right: 10px;
+            width: 20px;
             text-align: center;
-            padding: 40px;
-            color: #888;
+        }
+        
+        .back-detail-text h5 {
+            margin: 0 0 3px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .back-detail-text p {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark-gray);
+        }
+        
+        .back-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .price-tag {
+            background-color: var(--light-primary);
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Click Hint */
+        .click-hint {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: rgba(255, 122, 0, 0.1);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .click-hint i {
+            margin-right: 5px;
         }
         
         /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .col-lg-4 {
+                width: 50%;
+            }
+        }
+        
         @media (max-width: 768px) {
             .events-tab {
                 padding: 10px 20px;
@@ -299,6 +473,14 @@
             .event-btn {
                 margin-top: 15px;
                 align-self: flex-end;
+            }
+            
+            .col-lg-4 {
+                width: 100%;
+            }
+            
+            .event-card-container {
+                height: 400px;
             }
         }
         
@@ -320,75 +502,304 @@
 <section class="events-section" id="events">
     <div class="container">
         <div class="events-header">
-            <h2>Our Events</h2>
-            <p>Join us for exciting events and activities throughout the year</p>
+            <h2>Onze Evenementen</h2>
+            <p>Doe mee aan onze spannende evenementen en activiteiten het hele jaar door</p>
         </div>
         
         <div class="events-tabs">
-            <button class="events-tab active" data-target="upcoming">Upcoming Events</button>
-            <button class="events-tab" data-target="past">Past Events</button>
+            <button class="events-tab active" data-target="upcoming">Aankomende Evenementen</button>
+            <button class="events-tab" data-target="past">Afgelopen Evenementen</button>
         </div>
         
         <div class="events-content active" id="upcoming-events">
             <div class="row">
                 <!-- Event Card 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> April 15, 2025
-                            </div>
-                            <h3 class="event-title">Summer Training Camp</h3>
-                            <p class="event-description">Join our intensive summer training camp to improve your skills and techniques with professional coaches.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Main Stadium</div>
-                                    <div><i class="far fa-clock"></i> 10:00 AM - 3:00 PM</div>
+                <div class="col-lg-4">
+                    <div class="event-card-container">
+                        <div class="event-card">
+                            <div class="event-card-front">
+                                <div class="event-image" style="background-image: url('/api/placeholder/400/200');">
+                                    <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                                 </div>
-                                <a href="#" class="event-btn">Register</a>
+                                <div class="event-info">
+                                    <div class="event-date">
+                                        <i class="far fa-calendar-alt"></i> 15 april 2025
+                                    </div>
+                                    <h3 class="event-title">Zomer Trainingskamp</h3>
+                                    <p class="event-description">Doe mee aan ons intensieve zomer trainingskamp om je vaardigheden te verbeteren met professionele coaches.</p>
+                                    <div class="event-footer">
+                                        <div class="event-details">
+                                            <div><i class="fas fa-map-marker-alt"></i> Hoofdstadion</div>
+                                            <div><i class="far fa-clock"></i> 10:00 - 15:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="click-hint">
+                                        <i class="fas fa-mouse-pointer"></i> Klik voor meer info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card-back">
+                                <div class="profile-section">
+                                    <div class="profile-img" style="background-image: url('/api/placeholder/100/100');"></div>
+                                    <div class="profile-info">
+                                        <h4>Jeroen de Vries</h4>
+                                        <p>Hoofdtrainer</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-details">
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Datum</h5>
+                                            <p>15 april 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Tijd</h5>
+                                            <p>10:00 - 15:00</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Locatie</h5>
+                                            <p>Hoofdstadion, Sportweg 123</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Leeftijdscategorie</h5>
+                                            <p>12-18 jaar</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-list-ul"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Rooster</h5>
+                                            <p>Techniek, Tactiek, Conditie</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-footer">
+                                    <div class="price-tag">
+                                        <i class="fas fa-euro-sign"></i> 45,00
+                                    </div>
+                                    <a href="#" class="event-btn">Inschrijven</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Event Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> May 5, 2025
-                            </div>
-                            <h3 class="event-title">Youth Tournament</h3>
-                            <p class="event-description">Annual youth tournament featuring teams from across the region. Open for ages 10-16.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Central Field</div>
-                                    <div><i class="far fa-clock"></i> 9:00 AM - 4:00 PM</div>
+                <div class="col-lg-4">
+                    <div class="event-card-container">
+                        <div class="event-card">
+                            <div class="event-card-front">
+                                <div class="event-image" style="background-image: url('/api/placeholder/400/200');">
+                                    <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                                 </div>
-                                <a href="#" class="event-btn">Register</a>
+                                <div class="event-info">
+                                    <div class="event-date">
+                                        <i class="far fa-calendar-alt"></i> 5 mei 2025
+                                    </div>
+                                    <h3 class="event-title">Jeugdtoernooi</h3>
+                                    <p class="event-description">Jaarlijks jeugdtoernooi met teams uit de hele regio. Open voor leeftijden 10-16.</p>
+                                    <div class="event-footer">
+                                        <div class="event-details">
+                                            <div><i class="fas fa-map-marker-alt"></i> Centraal Veld</div>
+                                            <div><i class="far fa-clock"></i> 9:00 - 16:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="click-hint">
+                                        <i class="fas fa-mouse-pointer"></i> Klik voor meer info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card-back">
+                                <div class="profile-section">
+                                    
+                                    <div class="profile-img" style="background-image: url(assets/imgs/section.jpg)"></div>
+                                    <div class="profile-info">
+                                        <h4>Lisa Jansen</h4>
+                                        <p>Toernooicoördinator</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-details">
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Datum</h5>
+                                            <p>5 mei 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Tijd</h5>
+                                            <p>9:00 - 16:00</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Locatie</h5>
+                                            <p>Centraal Veld, Parkweg 45</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Leeftijdscategorie</h5>
+                                            <p>10-16 jaar</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-list-ul"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Rooster</h5>
+                                            <p>Groepsfase, Knock-out Ronde, Finale</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-footer">
+                                    <div class="price-tag">
+                                        <i class="fas fa-euro-sign"></i> 25,00
+                                    </div>
+                                    <a href="#" class="event-btn">Inschrijven</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Event Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> June 20, 2025
-                            </div>
-                            <h3 class="event-title">Coaching Workshop</h3>
-                            <p class="event-description">Learn advanced coaching techniques from professional trainers in this one-day intensive workshop.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Training Center</div>
-                                    <div><i class="far fa-clock"></i> 1:00 PM - 5:00 PM</div>
+                <div class="col-lg-4">
+                    <div class="event-card-container">
+                        <div class="event-card">
+                            <div class="event-card-front">
+                                <div class="event-image" style="background-image: url('/api/placeholder/400/200');">
+                                    <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                                 </div>
-                                <a href="#" class="event-btn">Register</a>
+                                <div class="event-info">
+                                    <div class="event-date">
+                                        <i class="far fa-calendar-alt"></i> 20 juni 2025
+                                    </div>
+                                    <h3 class="event-title">Coaching Workshop</h3>
+                                    <p class="event-description">Leer geavanceerde coachingtechnieken van professionele trainers in deze eendaagse intensieve workshop.</p>
+                                    <div class="event-footer">
+                                        <div class="event-details">
+                                            <div><i class="fas fa-map-marker-alt"></i> Trainingscentrum</div>
+                                            <div><i class="far fa-clock"></i> 13:00 - 17:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="click-hint">
+                                        <i class="fas fa-mouse-pointer"></i> Klik voor meer info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card-back">
+                                <div class="profile-section">
+                                    <div class="profile-img" style="background-image: url('/api/placeholder/100/100');"></div>
+                                    <div class="profile-info">
+                                        <h4>Mark Bakker</h4>
+                                        <p>Expert Trainer</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-details">
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Datum</h5>
+                                            <p>20 juni 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Tijd</h5>
+                                            <p>13:00 - 17:00</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Locatie</h5>
+                                            <p>Trainingscentrum, Sportlaan 78</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Leeftijdscategorie</h5>
+                                            <p>18+ jaar (coaches)</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-list-ul"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Rooster</h5>
+                                            <p>Theorie, Praktijk, Q&A Sessie</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-footer">
+                                    <div class="price-tag">
+                                        <i class="fas fa-euro-sign"></i> 75,00
+                                    </div>
+                                    <a href="#" class="event-btn">Inschrijven</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -399,93 +810,146 @@
         <div class="events-content" id="past-events">
             <div class="row">
                 <!-- Past Event Card 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> March 10, 2025
-                            </div>
-                            <h3 class="event-title">Spring Tournament</h3>
-                            <p class="event-description">Annual spring tournament with participants from all age groups competing in various categories.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Main Stadium</div>
-                                    <div><i class="far fa-clock"></i> 9:30 AM - 5:00 PM</div>
+                <div class="col-lg-4">
+                    <div class="event-card-container">
+                        <div class="event-card">
+                            <div class="event-card-front">
+                                <div class="event-image" style="background-image: url('/api/placeholder/400/200');">
+                                    <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                                 </div>
-                                <a href="#" class="event-btn">View Photos</a>
+                                <div class="event-info">
+                                    <div class="event-date">
+                                        <i class="far fa-calendar-alt"></i> 10 maart 2025
+                                    </div>
+                                    <h3 class="event-title">Voorjaarstoernooi</h3>
+                                    <p class="event-description">Jaarlijks voorjaarstoernooi met deelnemers uit alle leeftijdsgroepen die in verschillende categorieën strijden.</p>
+                                    <div class="event-footer">
+                                        <div class="event-details">
+                                            <div><i class="fas fa-map-marker-alt"></i> Hoofdstadion</div>
+                                            <div><i class="far fa-clock"></i> 9:30 - 17:00</div>
+                                        </div>
+                                    </div>
+                                    <div class="click-hint">
+                                        <i class="fas fa-mouse-pointer"></i> Klik voor meer info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card-back">
+                                <div class="profile-section">
+                                    <div class="profile-img" style="background-image: url('/api/placeholder/100/100');"></div>
+                                    <div class="profile-info">
+                                        <h4>Sandra Smit</h4>
+                                        <p>Evenementmanager</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-details">
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Datum</h5>
+                                            <p>10 maart 2025</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Tijd</h5>
+                                            <p>9:30 - 17:00</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Locatie</h5>
+                                            <p>Hoofdstadion, Sportweg 123</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Leeftijdscategorie</h5>
+                                            <p>Alle leeftijden</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-trophy"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Resultaten</h5>
+                                            <p>Team Oranje (winnaar)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-footer">
+                                    <a href="#" class="event-btn">Bekijk Foto's</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Past Event Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> February 15, 2025
-                            </div>
-                            <h3 class="event-title">Winter Training Camp</h3>
-                            <p class="event-description">Intensive winter training camp focused on building strength and improving techniques.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Indoor Training Facility</div>
-                                    <div><i class="far fa-clock"></i> 10:00 AM - 3:30 PM</div>
-                                </div>
-                                <a href="#" class="event-btn">View Photos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Past Event Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-image" style="background-image: url('assets/imgs/section.jpg');"></div>
-                        <div class="event-info">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> January 20, 2025
-                            </div>
-                            <h3 class="event-title">New Year Championship</h3>
-                            <p class="event-description">Start the year with our annual championship featuring top athletes from the academy.</p>
-                            <div class="event-footer">
-                                <div class="event-details">
-                                    <div><i class="fas fa-map-marker-alt"></i> Central Arena</div>
-                                    <div><i class="far fa-clock"></i> 11:00 AM - 6:00 PM</div>
-                                </div>
-                                <a href="#" class="event-btn">View Photos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Add more past events if needed -->
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Tab switching functionality
-        const tabs = document.querySelectorAll('.events-tab');
-        const contents = document.querySelectorAll('.events-content');
-        
-        tabs.forEach(tab => {
-            tab.addEventListener('click', function() {
-                // Remove active class from all tabs
-                tabs.forEach(t => t.classList.remove('active'));
-                // Add active class to clicked tab
-                this.classList.add('active');
-                
-                // Hide all content
-                contents.forEach(content => content.classList.remove('active'));
-                // Show relevant content
-                const target = this.getAttribute('data-target');
-                document.getElementById(target + '-events').classList.add('active');
-            });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Tab switching functionality
+    const tabs = document.querySelectorAll('.events-tab');
+    const contents = document.querySelectorAll('.events-content');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove active class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+            
+            // Hide all content
+            contents.forEach(content => content.classList.remove('active'));
+            // Show relevant content
+            const target = this.getAttribute('data-target');
+            document.getElementById(target + '-events').classList.add('active');
         });
     });
+
+    // Flip card functionality
+    const eventCards = document.querySelectorAll('.event-card');
+    const flipIcons = document.querySelectorAll('.flip-icon');
+    
+    // Add click event to the entire card
+    eventCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+    });
+    
+    // Prevent propagation from flip icon if needed
+    flipIcons.forEach(icon => {
+        icon.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent the click from bubbling up to the card
+            this.closest('.event-card').classList.toggle('flipped');
+        });
+    });
+});
 </script>
     
     <!-- End of Testmonial Section -->
