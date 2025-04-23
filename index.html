@@ -9,6 +9,10 @@
     <title>Tk sports academy</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="assets/css/leadmark.css">
     <!-- Bootstrap + LeadMark main styles -->
 	<link rel="stylesheet" href="assets/css/leadmark.css">
 </head>
@@ -103,17 +107,717 @@
     <header class="header">
         <img src="assets/imgs/header.jpg" alt="Background" class="header-bg">
         <div class="overlay">
-            <h1 class="subtitle">next event:</h1>
-            <h1 class="title" id="countdown-timer">Loading...</h1>
-            <h1 class="subtitle">May vacation ice hockey camp</h1>
-            <a href="Form.html" class="btn-signup">Sign Up</a>  
-        </div>  
+            <div class="header-flex-container">
+                <!-- Event Card First -->
+                <div class="header-event-card">
+                    <div class="event-card-container">
+                        <div class="event-card">
+                            <div class="event-card-front">
+                                <div class="event-image" style="background-image: url('/api/placeholder/400/200');">
+                                    <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
+                                </div>
+                                <div class="event-info">
+                                    <div class="event-date">
+                                        <i class="far fa-calendar-alt"></i> 30th April - 2nd may 2025
+                                    </div>
+                                    <h3 class="event-title">May Holiday Camp</h3>
+                                    <p class="event-description">Outwork your competition and elevate your game this summer with a physio-focused camp!</p>
+                                    <div class="event-footer">
+                                        <div class="event-details">
+                                            <div><i class="fas fa-map-marker-alt"></i> Ijsportcentrum Eindhoven</div>
+                                            <div><i class="far fa-clock"></i>12:45 - 17:15</div>
+                                        </div>
+                                    </div>
+                                    <div class="click-hint">
+                                        <i class="fas fa-mouse-pointer"></i> Click for more info
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="event-card-back">
+                                <div class="profile-section">
+                                    <div class="profile-img" style="background-image: url('/api/placeholder/100/100');"></div>
+                                    <div class="profile-info">
+                                        <h4>May Holiday Camp
+                                        <p>In collaboration with TLC hockey</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-details">
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Date</h5>
+                                            <p>30th April - 2nd May</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="far fa-clock"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Time</h5>
+                                            <p>12:45 - 17:15</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Location</h5>
+                                            <p>Ijssportcentrum Eindhoven</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Age Group</h5>
+                                            <p>12-17 years</p>
+                                        </div>
+                                    </div>
+                                    <div class="back-detail-item">
+                                        <div class="back-detail-icon">
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <div class="back-detail-text">
+                                            <h5>Special Guests</h5>
+                                            <p>Physiotherapist, Photographer</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="back-footer">
+                                    <div class="price-tag">
+                                        <i class="fas fa-euro-sign"></i> 225
+                                    </div>
+                                    <a href="#" class="event-btn">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timer Second -->
+                <div class="countdown-info">
+                    <h1 class="subtitle">next event:</h1>
+                    <h1 class="title" id="countdown-timer">Loading...</h1>
+                    <h1 class="subtitle">May vacation ice hockey camp</h1>
+                    <a href="Form.html" class="btn-signup">Sign Up</a>
+                </div>
+            </div>
+        </div>
+        
         <div class="shape">
             <svg viewBox="0 0 1500 200" style="color: white;">
                 <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z" fill="white"/>
             </svg>
         </div>  
     </header>
+
+    <style>
+:root {
+    --primary-color: #ff7a00;
+    --dark-primary: #e56c00;
+    --light-primary: #ffa64d;
+    --light-gray: #f8f9fa;
+    --dark-gray: #343a40;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-lg-4 {
+    width: 33.33%;
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+/* Events Section Styling */
+.events-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.events-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.events-header h2 {
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 20px;
+}
+
+.events-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.events-tab {
+    padding: 12px 30px;
+    background-color: #f1f1f1;
+    border: none;
+    color: #555;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.events-tab:first-child {
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.events-tab:last-child {
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.events-tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.events-content {
+    display: none;
+}
+
+.events-content.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Eerste stap: Reset de flexbox container */
+.header-flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Evenement kaart styling (links) */
+.header-event-card {
+    flex: 0 0 48%;
+    max-width: 480px;
+}
+
+/* Timer styling (rechts) */
+.countdown-info {
+    flex: 0 0 48%;
+    text-align: center; /* Center all text */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all child elements */
+}
+
+/* Update the countdown timer styling to ensure it stays on one line */
+.countdown-info .title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    white-space: nowrap; /* Prevents the timer from wrapping to a new line */
+    overflow: hidden; /* Handles any potential overflow */
+    text-overflow: ellipsis; /* Shows ellipsis if text overflows */
+}
+
+/* You might also want to adjust the responsive sizing to maintain readability */
+@media (max-width: 1200px) {
+    .countdown-info .title {
+        font-size: 2.5rem; /* Slightly smaller on medium-large screens */
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .countdown-info .title {
+        /* Since it's now centered on smaller screens, we can reset these properties */
+        white-space: normal;
+        overflow: visible;
+        text-overflow: initial;
+    }
+}
+
+@media (max-width: 992px) {
+    .countdown-info {
+        display: none;
+    }
+}
+
+
+.countdown-info .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.btn-signup {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    align-self: center; /* This centers the button horizontally within the flex container */
+}
+
+.btn-signup:hover {
+    background-color: var(--dark-primary);
+}
+
+/* Header styling */
+.header {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0 150px;
+    background-color: var(--dark-gray);
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.shape {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+/* Flip Card Styling */
+.event-card-container {
+    perspective: 1000px;
+    height: 450px;
+    cursor: pointer;
+}
+
+.event-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.event-card-front, .event-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.event-card-front {
+    background-color: white;
+    z-index: 2; /* Voegt duidelijkheid toe over welke kant moet worden getoond */
+}
+
+.event-card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1; /* Achterkant start achter de voorkant */
+}
+
+.event-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.flip-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    font-size: 16px;
+}
+
+.event-info {
+    padding: 20px;
+}
+
+.event-date {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.event-title {
+    font-weight: 700;
+    color: var(--dark-gray);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.event-description {
+    color: #666;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.event-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.event-details {
+    color: #777;
+    font-size: 14px;
+}
+
+.event-details i {
+    color: var(--primary-color);
+    margin-right: 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.event-details div {
+    margin-bottom: 5px;
+}
+
+.event-btn {
+    padding: 8px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.event-btn:hover {
+    background-color: var(--dark-primary);
+    color: white;
+    text-decoration: none;
+}
+
+/* Back Card Styling */
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    background-size: cover;
+    background-position: center;
+}
+
+.profile-info h4 {
+    margin: 0 0 5px 0;
+    color: var(--dark-gray);
+}
+
+.profile-info p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.back-details {
+    margin-bottom: 15px;
+}
+
+.back-detail-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.back-detail-icon {
+    color: var(--primary-color);
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.back-detail-text h5 {
+    margin: 0 0 3px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.back-detail-text p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.back-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-tag {
+    background-color: var(--light-primary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Click Hint */
+.click-hint {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(255, 122, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.click-hint i {
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .header-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .header-event-card, .countdown-info {
+        flex: 0 0 100%;
+        max-width: 400px;
+        width: 100%;
+
+    }
+    .header-event-card{
+        max-height: 500px;
+    }
+    
+    /* Tablet aanpassing: timer links uitlijnen */
+    .countdown-info {
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    .header {
+        padding: 80px 0 120px;
+    }
+    
+    .col-lg-4 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 0 100px;
+    }
+    
+    .countdown-info .title {
+        font-size: 2.5rem;
+    }
+    
+    .countdown-info .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .event-card-container {
+        height: 420px;
+    }
+    
+    /* Telefoon aanpassing: minder ruimte tussen kaart en timer */
+    .countdown-info {
+        margin-top: 20px;
+    }
+    
+    .events-tab {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .event-title {
+        font-size: 16px;
+    }
+    
+    .event-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .event-btn {
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+    
+    .col-lg-4 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 50px 0 80px;
+    }
+    
+    .countdown-info .title {
+        font-size: 2rem;
+    }
+    
+    .btn-signup {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .event-card-container {
+        min-height: 450px;
+    }
+    
+    /* Extra vermindering van ruimte op kleinere telefoons */
+    .countdown-info {
+        margin-top: 15px;
+    }
+    
+    .events-section {
+        padding: 50px 0;
+    }
+    
+    .events-tab {
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+}
+    </style> 
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.events-tab');
+            const contents = document.querySelectorAll('.events-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove active class from all tabs
+                    tabs.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Hide all content
+                    contents.forEach(content => content.classList.remove('active'));
+                    // Show relevant content
+                    const target = this.getAttribute('data-target');
+                    document.getElementById(target + '-events').classList.add('active');
+                });
+            });
+        
+            // Flip card functionality
+            const eventCards = document.querySelectorAll('.event-card');
+            const flipIcons = document.querySelectorAll('.flip-icon');
+            
+            // Add click event to the entire card
+            eventCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+            });
+            
+            // Prevent propagation from flip icon if needed
+            flipIcons.forEach(icon => {
+                icon.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent the click from bubbling up to the card
+                    this.closest('.event-card').classList.toggle('flipped');
+                });
+            });
+        });
+        </script>
     
     <script>
         // De datum waarop we willen aftellen (30 april 2025)
@@ -240,6 +944,162 @@
         text-decoration: underline;
         font-weight: bold;
     }
+    .special-content-container .special-item {
+    position: relative;
+    padding: 40px 30px; /* Meer padding aan de zijkanten */
+    min-height: 50vh; /* Verkleinde hoogte */
+    margin-bottom: 40px; /* Meer ruimte tussen items */
+    color: #fff;
+    overflow: hidden;
+    border-radius: 20px; /* Ronde hoeken */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Voegt subtiele schaduw toe */
+}
+
+.special-content-container .special-item:last-child {
+    margin-bottom: 20px; /* Minder margin onder het laatste item */
+}
+
+.special-content-container .item-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    border-radius: 20px; /* Ronde hoeken voor de achtergrond */
+}
+
+.special-content-container #item1 .item-background {
+    background-image: url(assets/imgs/section.jpg);
+}
+
+.special-content-container #item2 .item-background {
+    background-image: url();
+}
+
+.special-content-container #item3 .item-background {
+    background-image: url();
+}
+
+.special-content-container .item-background:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px; /* Ronde hoeken voor de overlay */
+}
+
+.special-content-container .item-content {
+    position: relative;
+    z-index: 1;
+}
+
+.special-content-container .special-title {
+    color: #fff;
+    margin-bottom: 20px; /* Verkleinde margin */
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.special-content-container .special-text {
+    color: #f0f0f0;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.special-content-container .learn-more-btn {
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    border-color: #fff;
+}
+
+.special-content-container .learn-more-btn:hover {
+    background-color: #ff6e42;
+    border-color: #ff6e42;
+    color: white;
+}
+
+/* Responsive Adjustments voor special items */
+@media (max-width: 767px) {
+    .special-content-container .special-item {
+        min-height: auto;
+        padding: 40px 20px; /* Meer padding aan de zijkanten op mobiel */
+        margin-left: 15px; /* Meer margin links op mobiel */
+        margin-right: 15px; /* Meer margin rechts op mobiel */
+        margin-bottom: 30px; /* Ruimte tussen items */
+    }
+    
+    .special-content-container .special-title {
+        font-size: 1.5rem;
+    }
+    
+    .special-content-container .special-text {
+        font-size: 1rem;
+    }
+
+    .special-content-container .col-md-8 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Progress Circle CSS blijft ongewijzigd - alleen specifieke selectors toegevoegd */
+.special-content-container .progress-circle-container {
+    position: sticky;
+    top: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 0;
+}
+
+.special-content-container .progress-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+
+.special-content-container .progress-circle svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.special-content-container .progress-circle-path {
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+.special-content-container .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    text-align: center;
+}
+
+.special-content-container .circle-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.special-content-container .circle-icon svg {
+    transform: none;
+    width: 50px;
+    height: 50px;
+    color: #333;
+
 
     /* Special Content Styling */
     .special-content-container {
@@ -331,16 +1191,7 @@
     }
 
     /* Progress Bar for Mobile */
-    .mobile-progress-container {
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 100;
-        padding: 5px 0;
-        background-color: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+
     
     .progress {
         height: 8px;
@@ -695,36 +1546,29 @@ function updateProgress(index) {
                     <div class="timeline-item">
                         <div class="timeline-dot">2025</div>
                         <div class="timeline-content">
-                            <div class="timeline-date">March 7th</div>
-                            <div class="timeline-text">First camp is was a great succes </div>
+                            <div class="timeline-date">March</div>
+                            <div class="timeline-text">First camp launched</div>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot">2013</div>
+                        <div class="timeline-dot">2025</div>
                         <div class="timeline-content">
-                            <div class="timeline-date">March 22</div>
-                            <div class="timeline-text">Expanded operations to major European markets including Germany, France and Spain.</div>
+                            <div class="timeline-date">May</div>
+                            <div class="timeline-text">2nd ice hockey camp</div>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot">2016</div>
+                        <div class="timeline-dot">2025</div>
                         <div class="timeline-content">
-                            <div class="timeline-date">July 8</div>
-                            <div class="timeline-text">Launch of our flagship product that gained international recognition and numerous industry awards.</div>
+                            <div class="timeline-date">June</div>
+                            <div class="timeline-text">Field hcokey camp</div>
                         </div>
                     </div>
                     <div class="timeline-item">
-                        <div class="timeline-dot">2020</div>
+                        <div class="timeline-dot">2025</div>
                         <div class="timeline-content">
-                            <div class="timeline-date">October 30</div>
-                            <div class="timeline-text">Global expansion with new offices in New York, Tokyo, and Singapore, reaching customers in over 50 countries.</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2024</div>
-                        <div class="timeline-content">
-                            <div class="timeline-date">February 12</div>
-                            <div class="timeline-text">Received prestigious innovation award and celebrated reaching 1 million customers worldwide.</div>
+                            <div class="timeline-date">August</div>
+                            <div class="timeline-text">Summer camp</div>
                         </div>
                     </div>
                 </div>
@@ -754,14 +1598,29 @@ function updateProgress(index) {
                 <div class="col-md-5 my-3">
                     <h6 class="mb-0">Phone</h6>
                     <p class="mb-4">+ 123-456-7890</p>
-    
+        
                     <h6 class="mb-0">Address</h6>
                     <p class="mb-4">12345 Fake ST NoWhere AB Country</p>
-    
+        
                     <h6 class="mb-0">Email</h6>
-                    <p class="mb-0">info@website.com</p>
-                    <p></p>
+                    <p class="mb-0">
+                        <a href="mailto:info@tksportsacademy.nl" style="color: #fff;">info@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="mailto:thibault@tksportsacademy.nl" style="color: #fff;">thibault@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="mailto:karlis@tksportsacademy.nl" style="color: #fff;">karlis@tksportsacademy.nl</a>
+                    </p>
+        
+                    <h6 class="mb-0">Instagram</h6>
+                    <p class="mb-4">
+                        <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" target="_blank" style="color: #fff;">
+                            @TLC_eindhoven 
+                        </a>
+                    </p>
                 </div>
+        
                 <div class="col-md-7">
                     <form>
                         <h4 class="mb-4">Contact us</h4>
@@ -794,6 +1653,17 @@ function updateProgress(index) {
     </section>
 	
 	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="assets/js/leadmark.js"></script>
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 

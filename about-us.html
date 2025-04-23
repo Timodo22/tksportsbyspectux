@@ -135,6 +135,22 @@
             width: 100%;
             max-width: 1400px; /* Bredere container */
         }
+
+        #service .container-fluid {
+            padding-right: 170px;
+            padding-left: 170px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            max-width: 1400px; /* Bredere container */
+        }
+
+        @media (max-width: 991px) {
+            #service .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
         
         /* Highlight text styling */
         .highlight-text {
@@ -155,13 +171,15 @@
 
         /* Special Item Styling with Background Images */
         .special-item {
-            position: relative;
-            padding: 60px 40px;
-            min-height: 80vh;
-            border-bottom: 1px solid #eee;
-            color: #fff;
-            overflow: hidden;
-        }
+    position: relative;
+    padding: 60px 60px; /* Meer ruimte links en rechts */
+    margin: 40px 0; /* Meer ruimte tussen de items */
+    min-height: 80vh;
+    border-bottom: 1px solid #eee;
+    color: #fff;
+    overflow: hidden;
+    border-radius: 20px; /* Ronde hoeken */
+}
 
         .special-item:last-child {
             border-bottom: none;
@@ -528,14 +546,29 @@
                 <div class="col-md-5 my-3">
                     <h6 class="mb-0">Phone</h6>
                     <p class="mb-4">+ 123-456-7890</p>
-    
+        
                     <h6 class="mb-0">Address</h6>
                     <p class="mb-4">12345 Fake ST NoWhere AB Country</p>
-    
+        
                     <h6 class="mb-0">Email</h6>
-                    <p class="mb-0">info@website.com</p>
-                    <p></p>
+                    <p class="mb-0">
+                        <a href="mailto:info@tksportsacademy.nl" style="color: #fff;">info@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="mailto:thibault@tksportsacademy.nl" style="color: #fff;">thibault@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="mailto:karlis@tksportsacademy.nl" style="color: #fff;">karlis@tksportsacademy.nl</a>
+                    </p>
+        
+                    <h6 class="mb-0">Instagram</h6>
+                    <p class="mb-4">
+                        <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" target="_blank" style="color: #fff;">
+                            @TLC_eindhoven 
+                        </a>
+                    </p>
                 </div>
+        
                 <div class="col-md-7">
                     <form>
                         <h4 class="mb-4">Contact us</h4>
