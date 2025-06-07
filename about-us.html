@@ -22,8 +22,8 @@
 
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10" style="padding-top: 24px; padding-bottom: 24px; padding-left: 16px; padding-right: 16px;">
-        <div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 0; ">
-            <a class="navbar-brand" href="#">
+        <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
+            <a class="navbar-brand" href="index.html">
                 <img src="assets/imgs/logo.png" alt="">
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -176,76 +176,124 @@
         }
 
         /* Special Item Styling with Background Images */
-        .special-item {
-    position: relative;
-    padding: 60px 60px; /* Meer ruimte links en rechts */
-    margin: 40px 0; /* Meer ruimte tussen de items */
-    min-height: 80vh;
-    border-bottom: 1px solid #eee;
-    color: #fff;
-    overflow: hidden;
-    border-radius: 20px; /* Ronde hoeken */
+       /* styles.css */
+
+/* 1. Container full-width “breken” */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
 }
 
-        .special-item:last-child {
-            border-bottom: none;
-        }
+/* 2. Special content kolomstructuur */
+.special-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-        .item-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            z-index: 0;
-        }
+/* 3. Elk item als flex-row of -row-reverse */
+.special-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 250px;
+  padding-right: 250px;              /* zwarte tekst */
+  background-color: #fff;     /* witte achtergrond */
+  flex-wrap: wrap;            /* voor mobiel */
+  width: 99vw;               /* vol scherm */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-bottom: 20px;
+  
+}
 
-        #item1 .item-background {
-            background-image: url(assets/imgs/Sharp_skills.jpg);
-        }
 
-        #item2 .item-background {
-            background-image: url(assets/imgs/Enhance.jpg);
-        }
+/* afwisselend volgorde: odd = normaal, even = omgekeerd */
+.special-item:nth-child(odd) {
+  flex-direction: row;
+}
+.special-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
 
-        #item3 .item-background {
-            background-image: url(assets/imgs/master.jpg);
-        }
+/* 4. Afbeelding & content elk 50% */
+.item-image,
+.item-content {
+  flex: 0 0 49%;
+  max-width: 50%;
+  
+}
 
-        .item-background:after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
+/* img schaalt netjes */
+.item-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
-        .item-content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+/* Titel- en tekstkleur expliciet zwart */
+.special-title,
+.special-text {
+  color: #000;
+}
 
-        .special-title {
-            color: #fff;
-            margin-bottom: 30px;
-            font-weight: 600;
-            font-size: 2.2rem;
-            border-left: 5px solid #ff6b00;
-            padding-left: 15px;
-        }
+/* Opmaak titel & tekst */
+.special-title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 2.2rem;
+  border-left: 5px solid #ff6b00;
+  padding-left: 15px;
+}
 
-        .special-text {
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            line-height: 1.7;
-            font-size: 1.1rem;
-        }
+.special-text {
+  margin-bottom: 25px;
+  line-height: 1.7;
+  font-size: 1.1rem;
+
+    text-align: justify;
+  text-align-last: left;      /* moderne browsers */
+  -moz-text-align-last: justify; /* Firefox */
+  -ms-text-align-last: justify;  /* IE/Edge */
+
+  /* voorkom dat woorden of links “uitsteken” */
+  box-sizing: border-box;
+  word-break: break-word;        /* breek lange woorden of URLs */
+  hyphens:auto;   
+}
+
+/* Responsief */
+@media (max-width: 991px) {
+  .special-item {
+    padding: 50px 20px;
+  }
+  .special-title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .special-item {
+    flex-direction: column !important; /* stapel op klein scherm */
+    padding: 40px 15px;
+  }
+  .item-image,
+  .item-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .special-title {
+    font-size: 1.5rem;
+  }
+  .special-text {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.6rem;
+  }
+}
 
         .learn-more-btn {
             padding: 10px 25px;
@@ -398,6 +446,12 @@
                 padding: 60px 0;
             }
         }
+        .founder-img,
+.item-image img {
+  border-radius: 15px;
+}
+
+
         
         @media (max-width: 767px) {
             .special-item {
@@ -426,6 +480,25 @@
                 height: 250px;
             }
         }
+        #about .section-subtitle {
+  max-width: 800px;              /* voorkomt dat de tekst te breed wordt */
+  margin: 0 auto 2rem;           /* centreert en geeft ondermarge */
+  padding: 1rem 2rem;            /* binnenruimte, zodat de tekst niet tegen de rand staat */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  
+  /* zorg dat alle regels, inclusief de laatste, netjes uitvullen */
+  text-align: justify;
+  text-align-last: left;      /* moderne browsers */
+  -moz-text-align-last: justify; /* Firefox */
+  -ms-text-align-last: justify;  /* IE/Edge */
+
+  /* voorkom dat woorden of links “uitsteken” */
+  box-sizing: border-box;
+  word-break: break-word;        /* breek lange woorden of URLs */
+  hyphens:auto;             /* optionele koppeling van woorden bij regeluiteinde */
+            /* alles binnen de box houden */
+}
     </style>
 </head>
 <body>
@@ -437,7 +510,7 @@
                 <div class="accent-circle accent-circle-2"></div>
                 
                 <h2 class="section-title text-center">Our mission</h2>
-                <p class="section-subtitle text-center"> 
+                <p class="section-subtitle"> 
 
 Being physically active is essential for both the body and the mind. When introduced from a young age, it not only supports a healthy lifestyle but also builds lasting habits that promote long term well-being. 
 
@@ -486,44 +559,64 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
     </section>
 <!-- Our Recipe for Success Section -->
 <section id="service" class="section pt-5 pb-0">
-    <div class="container-fluid">
-        <h2 class="section-title text-center">Navigating your path to the <span class="highlight-text">top</span></h2>
+  <div class="container-fluid">
+    <h2 class="section-title text-center">
+      Navigating your path to the <span class="highlight-text">top</span>
+    </h2>
 
-        <div class="special-content-container">
-            <!-- Special Content Items -->
-            <div class="special-content">
-                <!-- Item 1 -->
-                <div class="special-item" id="item1">
-                    <div class="item-background"></div>
-                    <div class="item-content">
-                        <h3 class="special-title">Sharpen your skills</h3>
-                        <p class="special-text">Our camps provide motivated athletes with expert coaches who are currently competing at very high levels, ensuring real-world experience and insight. Through carefully designed training sessions, we focus on refining technique, boosting game awareness, and improving overall performance. With focussed drills and personalised feedback, athletes grow confidence and develop control to perform at their best. Whether its ice hockey, field hockey, tennis, football, our goal is to help every athlete build a strong skill foundation that elevates their entire game.</p>
+    <div class="special-content-container">
+      <div class="special-content">
 
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="special-item" id="item2">
-                    <div class="item-background"></div>
-                    <div class="item-content">
-                        <h3 class="special-title">Enhance your athletic performance</h3>
-                        <p class="special-text">A strong, well-conditioned body is the foundation of every successful athlete. That’s why our camps place a strong emphasis on developing physical performance that matches the demands of your sport. Under the guidance of our strength and conditioning experts, participants work on improving their speed, power, endurance, mobility, and injury prevention. Every workout is designed with your sport in mind, because performing at your best means training the right way.</p>
-
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="special-item" id="item3">
-                    <div class="item-background"></div>
-                    <div class="item-content">
-                        <h3 class="special-title">Master the habits behind peak performance</h3>
-                        <p class="special-text">Peak performance isn’t just about what you do during training—it’s about how you recover, what you eat, how you sleep, and the mindset you carry every day. At our camps, athletes learn the key habits that support long-term success in sport and in life. We teach young athletes how to fuel their bodies properly, build smart recovery routines, understand how muscles work, and develop the mental discipline needed to compete at a high level. These are the often overlooked factors that separate good athletes from great ones, and we tackle them head-on.</p>
-
-                    </div>
-                </div>
-            </div>
+        <!-- Item 1: afbeelding links, tekst rechts -->
+        <div class="special-item" id="item1">
+          <div class="item-image">
+            <img src="assets/imgs/Sharp_skills.jpg" alt="Sharpen your skills">
+          </div>
+          <div class="item-content">
+            <h3 class="special-title">Sharpen your skills</h3>
+            <p class="special-text">
+              Onze camps bieden gemotiveerde atleten expertcoaches die zelf op topniveau spelen. 
+              Met gerichte trainingssessies scherpen we techniek, spelinzicht en perform
+              ance aan. Door drills en persoonlijke feedback groei je in vertrouwen en controle—
+              of je nu ijshockey, veldhockey, tennis of voetbal speelt.
+            </p>
+          </div>
         </div>
+
+        <!-- Item 2: afbeelding rechts, tekst links -->
+        <div class="special-item" id="item2">
+          <div class="item-image">
+            <img src="assets/imgs/Enhance.jpg" alt="Enhance your performance">
+          </div>
+          <div class="item-content">
+            <h3 class="special-title">Enhance your athletic performance</h3>
+            <p class="special-text" >
+              Een goed getraind lichaam is de basis van succes. Onder leiding van strength & 
+              conditioning-experts werk je aan snelheid, kracht, uithouding, mobiliteit en blessurepreventie.
+              Elke workout is sport-specifiek ontworpen, omdat top-prestaties om gerichte training vragen.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3: weer afbeelding links, tekst rechts -->
+        <div class="special-item" id="item3">
+          <div class="item-image">
+            <img src="assets/imgs/master.jpg" alt="Master peak habits">
+          </div>
+          <div class="item-content">
+            <h3 class="special-title">Master the habits behind peak performance</h3>
+            <p class="special-text">
+              Pieken doe je niet alleen tijdens training: herstel, voeding, slaap en mindset maken het verschil.
+              Wij leren jonge atleten hoe ze optimaal brandstof kiezen, slim herstellen, musculatuur begrijpen
+              en mentale discipline ontwikkelen. Dit zijn de factoren die goede atleten van geweldige atleten 
+              scheiden.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- About Us Section -->

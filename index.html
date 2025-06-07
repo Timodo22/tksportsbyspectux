@@ -21,8 +21,8 @@
 
     <!-- page Navigation -->
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
-        <div class="container" style="margin-top: 20px; margin-bottom: 20px; padding: 0; ">
-            <a class="navbar-brand" href="#">
+        <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
+            <a class="navbar-brand" href="index.html">
                 <img src="assets/imgs/logo.png" alt="">
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -320,7 +320,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
@@ -330,6 +330,7 @@ body {
 .header-event-card {
     flex: 0 0 48%;
     max-width: 480px;
+    padding-right: 30px;
 }
 
 /* Timer styling (rechts) */
@@ -404,7 +405,7 @@ body {
 .header {
     position: relative;
     overflow: hidden;
-    padding: 100px 0 150px;
+    padding: 50x 0 80px;
     background-color: var(--dark-gray);
 }
 
@@ -854,7 +855,7 @@ body {
 <section id="service" style="background-color: #fff;" class="section pt-0">
     <div class="container" style="margin-top: 0;">
         <h6 class="section-title text-center" style="color: #444;">Navigating your path to the <span class="highlight-text">top</span></h6>
-        <h6 class="section-subtitle text-center mb-5 pb-3" style="color: #444;">At TK Sports Academy, we know that climbing to the top isn’t just about talent or hard work – it’s about training smart, staying strong, and keeping your head in the game. That’s why our mountain logo, with its three peaks, symbolises the 3 essential paths to athletic success: skill, strength, and mindset. Designed for motivated athletes, our camps combine excellent training with strength training from our expert team, and specialist-led lectures focussing on nutrition, injury prevention, and mental performance. Although we have so far only held ice hockey camps, we plan to expand to other sports soon!</h6>
+        <h6 class="section-subtitle mb-5 pb-3" style="color: #444;">At TK Sports Academy, we know that climbing to the top isn’t just about talent or hard work – it’s about training smart, staying strong, and keeping your head in the game. That’s why our mountain logo, with its three peaks, symbolises the 3 essential paths to athletic success: skill, strength, and mindset. Designed for motivated athletes, our camps combine excellent training with strength training from our expert team, and specialist-led lectures focussing on nutrition, injury prevention, and mental performance. Although we have so far only held ice hockey camps, we plan to expand to other sports soon!</h6>
 
         <!-- Mobile Progress Bar (only visible on small screens) -->
         <div class="mobile-progress-container d-md-none">
@@ -994,14 +995,14 @@ body {
 
 .special-content-container .special-title {
     color: #fff;
-    margin-bottom: 20px; /* Verkleinde margin */
+    margin-bottom: 50px; /* Verkleinde margin */
     font-weight: 600;
     font-size: 2rem;
 }
 
 .special-content-container .special-text {
     color: #f0f0f0;
-    margin-bottom: 25px;
+    margin-bottom: 170px;
     line-height: 1.7;
     font-size: 1.1rem;
 }
@@ -1051,7 +1052,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 0;
+    bottom: 30px;
 }
 
 .special-content-container .progress-circle {
@@ -1157,7 +1158,7 @@ body {
 
     .special-title {
         color: #fff;
-        margin-bottom: 30px;
+        margin-bottom: 50px;
         font-weight: 600;
         font-size: 2rem;
     }
@@ -1337,17 +1338,15 @@ function updateProgress(index) {
     
     // Controleer de zichtbaarheid van de voortgangscirkel
     function checkCircleVisibility() {
-        const lastItem = items[items.length - 1];
-        const lastItemRect = lastItem.getBoundingClientRect();
-        const sectionRect = section.getBoundingClientRect();
-        
-        // Als we voorbij de onderkant van item 3 zijn, verberg de cirkel
-        if (lastItemRect.bottom < window.innerHeight / 2) {
-            progressCircleContainer.style.opacity = '0';
-            progressCircleContainer.style.pointerEvents = 'none';
-        } 
-        // Toon de cirkel alleen als we binnen de sectie zijn
-        else if (sectionRect.top <= 0 && sectionRect.bottom >= 0) {
+        const serviceRect = section.getBoundingClientRect();
+        const aboutRect   = aboutSection.getBoundingClientRect();
+
+        // Toon de cirkel zodra de service sectie in beeld komt…
+        const inServiceView = serviceRect.top < window.innerHeight && serviceRect.bottom > 0;
+        // …en verberg ‘m pas als de about sectie in beeld is gekomen
+        const reachedAbout  = aboutRect.top <= window.innerHeight * 0.2;
+
+        if (inServiceView && !reachedAbout) {
             progressCircleContainer.style.opacity = '1';
             progressCircleContainer.style.pointerEvents = 'auto';
         } else {
@@ -1415,12 +1414,54 @@ function updateProgress(index) {
             color: #fff;
             text-align: center;
         }
+        /* Ruimte en grotere tekst voor de service-subtitle */
+#service .section-subtitle {
+  max-width: 800px;              /* voorkomt dat de tekst te breed wordt */
+  margin: 0 auto 2rem;           /* centreert en geeft ondermarge */
+  padding: 1rem 2rem;            /* binnenruimte, zodat de tekst niet tegen de rand staat */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  
+  /* zorg dat alle regels, inclusief de laatste, netjes uitvullen */
+  text-align: justify;
+        /* moderne browsers */
+  -moz-text-align-last: justify; /* Firefox */
+  -ms-text-align-last: justify;  /* IE/Edge */
+
+  /* voorkom dat woorden of links “uitsteken” */
+  box-sizing: border-box;
+  word-break: break-word;        /* breek lange woorden of URLs */
+  hyphens:auto;             /* optionele koppeling van woorden bij regeluiteinde */
+            /* alles binnen de box houden */
+}
+
+
 
         /* Timeline Container */
         .timeline {
             position: relative;
             margin: 60px 0;
         }
+        /* Hover-effect op de hele timeline-item */
+.timeline-item:hover .timeline-content {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 110, 66, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 2;
+}
+
+/* Optioneel: dot ook iets vergroten en gloed geven */
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 110, 66, 0.7), 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Zorg dat de parent genoeg ruimte heeft voor de vergroting */
+.timeline-item {
+    transition: transform 0.3s ease;
+}
+
 
         /* Timeline line */
         .timeline::before {
@@ -1544,49 +1585,59 @@ function updateProgress(index) {
 </head>
 <body class="upcoming-events">
 
-    <section class="section" style="background-color: #2c2c2c;" id="about">
-        <div class="container">
-            <h2 class="section-title">Timeline</h2>
-            <h3 class="section-subtitle">Our journey</h3>
+<section class="section" style="background-color: #2c2c2c;" id="about">
+  <div class="container">
+    <h2 class="section-title">Timeline</h2>
+    <h3 class="section-subtitle">Our journey</h3>
 
-            <div class="timeline">
-                <div class="timeline-items">
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2025</div>
-                        <div class="timeline-content">
-                            <img src='assets/imgs/TimeLine1.jpg' alt="Ice Hockey Camp" class="timeline-image">
-                            <div class="timeline-date">August</div>
-                            <div class="timeline-text">Pre season camp | Ice hockey</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2025</div>
-                        <div class="timeline-content">
-                            <img src="assets/imgs/TimeLine2.jpg" alt="Christmas Camp" class="timeline-image">
-                            <div class="timeline-date">December</div>
-                            <div class="timeline-text">Christmas camp | Ice hockey</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2026</div>
-                        <div class="timeline-content">
-                            <img src="assets/imgs/TimeLine3.jpg" alt="Carnival Camp" class="timeline-image">
-                            <div class="timeline-date">March</div>
-                            <div class="timeline-text">Carnival camp | Ice hockey</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot">2026</div>
-                        <div class="timeline-content">
-                            <img src="assets/imgs/TimeLine4.jpg" alt="End of Season Camp" class="timeline-image">
-                            <div class="timeline-date">May</div>
-                            <div class="timeline-text">End of the season camp | Ice hockey</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="timeline">
+      <div class="timeline-items">
+
+        <!-- Pre-season Camp -->
+        <div class="timeline-item">
+          <div class="timeline-dot">2025</div>
+          <a href="Events.html#preseason-camp" class="timeline-content">
+            <img src="assets/imgs/preseason_camp.jpg" alt="Ice Hockey Camp" class="timeline-image">
+            <div class="timeline-date">August</div>
+            <div class="timeline-text">Pre season camp | Ice hockey</div>
+          </a>
         </div>
-    </section>
+
+        <!-- Christmas Camp -->
+        <div class="timeline-item">
+          <div class="timeline-dot">2025</div>
+          <a href="Events.html#christmas-camp" class="timeline-content">
+            <img src="assets/imgs/TimeLine2.jpg" alt="Christmas Camp" class="timeline-image">
+            <div class="timeline-date">December</div>
+            <div class="timeline-text">Christmas camp | Ice hockey</div>
+          </a>
+        </div>
+
+        <!-- Carnival Camp -->
+        <div class="timeline-item">
+          <div class="timeline-dot">2026</div>
+          <a href="Events.html#carnival-camp" class="timeline-content">
+            <img src="assets/imgs/carnival_camp.jpg" alt="Carnival Camp" class="timeline-image">
+            <div class="timeline-date">March</div>
+            <div class="timeline-text">Carnival camp | Ice hockey</div>
+          </a>
+        </div>
+
+        <!-- End of Season Camp -->
+        <div class="timeline-item">
+          <div class="timeline-dot">2026</div>
+          <a href="Events.html#may-camp" class="timeline-content">
+            <img src="assets/imgs/may_camp.jpg" alt="End of Season Camp" class="timeline-image">
+            <div class="timeline-date">May</div>
+            <div class="timeline-text">End of the season camp | Ice hockey</div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- End OF About Section -->
 
     <!-- Portfolio Section -->
