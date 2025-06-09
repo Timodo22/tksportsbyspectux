@@ -13,7 +13,7 @@
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" href="/assets/imgs/logo.png" type="image/png">
+    <link rel="icon" href="/assets/imgs/logo-blac.png" type="image/png">
     
     <!-- Bootstrap + LeadMark main styles -->
 	<link rel="stylesheet" href="assets/css/leadmark.css">
@@ -21,10 +21,13 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <!-- page Navigation -->
-    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10" style="padding-top: 24px; padding-bottom: 24px; padding-left: 16px; padding-right: 16px;">
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10" style="padding-left: 16px; padding-right: 16px;">
         <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
-            <a class="navbar-brand" href="index.html">
-                <img src="assets/imgs/logo.png" alt="">
+                <a class="navbar-brand" href="index.html">
+  <img src="assets/imgs/logo-white.png" alt="TK Sports Academy" class="logo–white">
+  <img src="assets/imgs/logo-blac.png" alt="TK Sports Academy" class="logo–black">
+</a>
+
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -55,7 +58,22 @@
     <!-- End Of Second Navigation -->
 
     <style>
-    
+    /* Standaard: alleen wit logo tonen */
+.navbar-brand .logo–black {
+  display: none;
+}
+.navbar-brand .logo–white {
+  display: block;
+}
+
+/* Zodra Bootstrap Affix de klasse .affix toevoegt: */
+.navbar.affix .logo–white {
+  display: none;
+}
+.navbar.affix .logo–black {
+  display: block;
+}
+
         .btn-signup {
             padding: 12px 30px;
             border: 2px solid white;
@@ -272,6 +290,7 @@
   }
   .special-title {
     font-size: 1.8rem;
+    margin-top: 10px;
   }
 }
 @media (max-width: 767px) {
@@ -291,7 +310,7 @@
     font-size: 1rem;
   }
   .section-title {
-    font-size: 1.6rem;
+    font-size: 1.9rem;
   }
 }
 
@@ -468,7 +487,7 @@
             }
             
             .section-title {
-                font-size: 1.6rem;
+                font-size: 1.9rem;
             }
             
             .section-subtitle {
@@ -480,6 +499,9 @@
                 height: 250px;
             }
         }
+        .header .overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* 0.2 = 20% zwart */
+}
         #about .section-subtitle {
   max-width: 800px;              /* voorkomt dat de tekst te breed wordt */
   margin: 0 auto 2rem;           /* centreert en geeft ondermarge */
@@ -530,7 +552,7 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
                                 <p class="founder-bio">I’ve spent my entire playing career with the Eindhoven Kemphanen, where I captained the U23 team and won championships in U19, U23, and the Eredivisie. Alongside playing, I’ve been coaching for eight years, starting at the IJshockey School, giving private lessons with TLC Hockey Eindhoven, and training the U17 team together with Karlis. </p>
                                 <p class="founder-bio">I’m studying Psychology & Technology at Eindhoven University of Technology, which helps me combine academic knowledge of psychology with practical experience of coaching. The more I have been coaching, the more I wanted to create a camp I always dreamed of as a kid—one built on the real insights I’ve gained from being in the sport, and getting a taste of what the professional sporting world is like. I love teaching and seeing people shine when they learn new skills.</p>
                                 <div class="social-links">
-                                    <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" class="social-link"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -547,7 +569,7 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
                                 <p class="founder-bio">In addition to playing, I’ve also been actively engaged as a trainer and coach. Over the past two years, I’ve led morning practices for the TLC program and coached both the U15 and U17 teams at Eindhoven Kemphanen. Working with these young athletes and witnessing their growth and joy on the ice has been incredibly rewarding. This experience has inspired me to create even more opportunities for kids to express themselves through the sport they love.</p>
                                 <div class="social-links">
 
-                                    <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    <a    rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" class="social-link"><i class="fab fa-instagram"></i></a>
                                    
                                 </div>
                             </div>
@@ -575,10 +597,17 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
           <div class="item-content">
             <h3 class="special-title">Sharpen your skills</h3>
             <p class="special-text">
-              Onze camps bieden gemotiveerde atleten expertcoaches die zelf op topniveau spelen. 
-              Met gerichte trainingssessies scherpen we techniek, spelinzicht en perform
-              ance aan. Door drills en persoonlijke feedback groei je in vertrouwen en controle—
-              of je nu ijshockey, veldhockey, tennis of voetbal speelt.
+Our camps provide motivated athletes with expert
+coaches who are currently competing at very high 
+levels, ensuring real-world experience and insight. 
+Through carefully designed training sessions, we focus 
+on refining technique, boosting game awareness, and 
+improving overall performance. With focussed drills and 
+personalised feedback, athletes grow confidence and 
+develop control to perform at their best. Whether its ice 
+hockey, field hockey, tennis, football, our goal is to help 
+every athlete build a strong skill foundation that 
+elevates their entire game.
             </p>
           </div>
         </div>
@@ -591,10 +620,17 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
           <div class="item-content">
             <h3 class="special-title">Enhance your athletic performance</h3>
             <p class="special-text" >
-              Een goed getraind lichaam is de basis van succes. Onder leiding van strength & 
-              conditioning-experts werk je aan snelheid, kracht, uithouding, mobiliteit en blessurepreventie.
-              Elke workout is sport-specifiek ontworpen, omdat top-prestaties om gerichte training vragen.
-            </p>
+A strong, well-conditioned body is the foundation of 
+every successful athlete. That’s why our camps place 
+a strong emphasis on developing physical 
+performance that matches the demands of your sport. 
+Under the guidance of our strength and conditioning 
+experts, participants work on improving their speed, 
+power, endurance, mobility, and injury prevention. 
+Every workout is designed with your sport in mind, 
+because performing at your best means training the 
+right way.
+  </p>
           </div>
         </div>
 
@@ -606,10 +642,18 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
           <div class="item-content">
             <h3 class="special-title">Master the habits behind peak performance</h3>
             <p class="special-text">
-              Pieken doe je niet alleen tijdens training: herstel, voeding, slaap en mindset maken het verschil.
-              Wij leren jonge atleten hoe ze optimaal brandstof kiezen, slim herstellen, musculatuur begrijpen
-              en mentale discipline ontwikkelen. Dit zijn de factoren die goede atleten van geweldige atleten 
-              scheiden.
+Peak performance isn’t just about what you do during 
+training—it’s about how you recover, what you eat, 
+how you sleep, and the mindset you carry every day. 
+At our camps, athletes learn the key habits that 
+support long-term success in sport and in life. We 
+teach young athletes how to fuel their bodies properly, 
+build smart recovery routines, understand how 
+muscles work, and develop the mental discipline 
+needed to compete at a high level. These are the often 
+overlooked factors that separate good athletes from 
+great ones, and we tackle them head-on.
+
             </p>
           </div>
         </div>

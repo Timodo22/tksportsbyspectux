@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="assets/css/leadmark.css">
     <!-- Bootstrap + LeadMark main styles -->
 	<link rel="stylesheet" href="assets/css/leadmark.css">
-    <link rel="icon" href="/assets/imgs/logo.png" type="image/png">
+    <link rel="icon" href="/assets/imgs/logo-blac.png" type="image/png">
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
@@ -23,7 +23,11 @@
     <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
         <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
             <a class="navbar-brand" href="index.html">
-                <img src="assets/imgs/logo.png" alt="">
+                <a class="navbar-brand" href="index.html">
+  <img src="assets/imgs/logo-white.png" alt="TK Sports Academy" class="logo–white">
+  <img src="assets/imgs/logo-blac.png" alt="TK Sports Academy" class="logo–black">
+</a>
+
             </a>
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -54,6 +58,23 @@
     <!-- End Of Second Navigation -->
 
     <style>
+
+        /* Standaard: alleen wit logo tonen */
+.navbar-brand .logo–black {
+  display: none;
+}
+.navbar-brand .logo–white {
+  display: block;
+}
+
+/* Zodra Bootstrap Affix de klasse .affix toevoegt: */
+.navbar.affix .logo–white {
+  display: none;
+}
+.navbar.affix .logo–black {
+  display: block;
+}
+
 .btn-signup {
     padding: 16px 40px;
     border: none;
@@ -314,13 +335,16 @@ body {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+.header .overlay {
+  background-color: rgba(0, 0, 0, 0.6); /* 0.2 = 20% zwart */
+}
 
 /* Eerste stap: Reset de flexbox container */
 .header-flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
@@ -362,7 +386,7 @@ body {
 
 @media (min-width: 993px) {
     .event-card-container {
-        padding-right: 30px; /* Slightly smaller on medium-large screens */
+        padding-right: 100px; /* Slightly smaller on medium-large screens */
     }
 }
 
