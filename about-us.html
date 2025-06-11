@@ -546,7 +546,7 @@ We’ve lived this journey ourselves. We’ve felt the challenges, the triumphs,
                         <div class="founder-card">
                             <img src="assets/imgs/Thibault.jpg" alt="Oprichter 1" class="founder-img">
                             <div class="founder-info">
-                                <h3 class="founder-name">Thibault tieke</h3>
+                                <h3 class="founder-name">Thibault Tieke</h3>
                                 <p class="founder-title">Co-Founder</p>
                                 <p class="founder-bio">I come from a multicultural background, being both French and German, and as a result, I speak four languages. Growing up, I travelled a lot and lived in Germany, England, and the Netherlands. I’ve always been passionate about sports—playing football, tennis, and hockey throughout my youth. I started skating when I was just three years old and began playing ice hockey at eight which I still play competitively to this day.</p>
                                 <p class="founder-bio">I’ve spent my entire playing career with the Eindhoven Kemphanen, where I captained the U23 team and won championships in U19, U23, and the Eredivisie. Alongside playing, I’ve been coaching for eight years, starting at the IJshockey School, giving private lessons with TLC Hockey Eindhoven, and training the U17 team together with Karlis. </p>
@@ -672,40 +672,56 @@ great ones, and we tackle them head-on.
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- End of Testmonial Section -->
+<style>
+  /* Zorg dat input/textarea tekst wit is */
+  #contactForm .form-control {
+    color: #fff !important;
+  }
 
+  /* Zorg dat de placeholder ook wit is */
+  #contactForm .form-control::placeholder {
+    color: rgba(255,255,255,0.7); /* pas de opacity naar wens aan */
+    opacity: 1; /* sommige browsers negeren rgba-opacity anders */
+  }
+
+  /* Voor oudere browsers (IE) */
+  #contactForm .form-control:-ms-input-placeholder { color: #fff; }
+  #contactForm .form-control::-ms-input-placeholder { color: #fff; }
+  #contactForm .form-control::-webkit-input-placeholder { color: #fff; }
+</style>
     <!-- Contact Section -->
     <!-- Contact Section -->
 <!-- Contact Section -->
-<section id="contact" class="section pb-0" style="position: relative; color: #fff;">
-    <!-- Background image -->
-    <img src="assets/imgs/section.jpg" alt="Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: 1;">
-    
-    <!-- Overlay div -->
-    <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2;"></div>
-    
-    <div class="container" style="margin-bottom: 0; position: relative; z-index: 3;">
-        <div class="row align-items-center">
-            <div class="col-md-5 my-3">
-                <h6 class="mb-0">Email</h6>
-                <p class="mb-0">
-                    <a href="mailto:info@tksportsacademy.nl" style="color: #fff;">info@tksportsacademy.nl</a>
-                </p>
-                <p class="mb-0">
-                    <a href="mailto:thibault@tksportsacademy.nl" style="color: #fff;">thibault@tksportsacademy.nl</a>
-                </p>
-                <p class="mb-4">
-                    <a href="mailto:karlis@tksportsacademy.nl" style="color: #fff;">karlis@tksportsacademy.nl</a>
-                </p>
-    
-                <h6 class="mb-0">Instagram</h6>
-                <p class="mb-4">
-                    <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" target="_blank" style="color: #fff;">
-                        @TLC_eindhoven 
-                    </a>
-                </p>
-            </div>
-    
-            <div class="col-md-7">
+    <section id="contact" class="section pb-0" style="position: relative; color: #fff;">
+        <!-- Background image -->
+        <img src="assets/imgs/section.jpg" alt="Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: 1;">
+        
+        <!-- Overlay div -->
+        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2;"></div>
+        
+        <div class="container" style="margin-bottom: 0; position: relative; z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-md-5 my-3">
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-0">
+                        <a href="mailto:info@tksportsacademy.nl" style="color: #fff;">info@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="mailto:thibault@tksportsacademy.nl" style="color: #fff;">thibault@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="mailto:karlis@tksportsacademy.nl" style="color: #fff;">karlis@tksportsacademy.nl</a>
+                    </p>
+        
+                    <h6 class="mb-0">Instagram</h6>
+                    <p class="mb-4">
+                        <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" target="_blank" style="color: #fff;">
+                            @TLC_eindhoven 
+                        </a>
+                    </p>
+                </div>
+        
+                <div class="col-md-7">
         <form id="contactForm" novalidate>
           <h4 class="mb-4">Contact us</h4>
           <div class="row">
@@ -722,7 +738,7 @@ great ones, and we tackle them head-on.
               <textarea name="message" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message" required></textarea>
             </div>
             <div class="form-group col-12 mb-0">
-              <button type="submit" class="btn btn-primary rounded w-md mt-3">Send</button>
+              <button type="submit" class="btn btn-primary rounded w-md mt-3" style="background-color: #ff6b00; border-color: #ff6b00;">Send</button>
             </div>
           </div>
         </form>
@@ -779,16 +795,18 @@ great ones, and we tackle them head-on.
       }
     });
   </script>
-                
+                </div>
             </div>
+
+
+
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, TKsports Acadamy Created By <a href="https://spectux.com" target="_blank" style="color: #ff6b00;">Spectux.com.</a>  All rights reserved </p>     
+            </footer>
+            <!-- End of Page Footer -->  
         </div>
-        <!-- Page Footer -->
-        <footer class="mt-5 py-4 border-top border-secondary">
-            <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, TKsports Acadamy Created By <a href="https://spectux.com" target="_blank">Spectux.com.</a>  All rights reserved </p>     
-        </footer>
-        <!-- End of Page Footer -->  
-    </div>
-</section>
+    </section>
 	
 	<!-- core  -->
     <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
