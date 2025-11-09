@@ -20,7 +20,7 @@
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
     <!-- page Navigation -->
-    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10">
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10" style="z-index: 1030;">
         <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
             <a class="navbar-brand" href="index.html">
                 <a class="navbar-brand" href="index.html">
@@ -142,19 +142,19 @@
                    <div class="event-card-container">
     <div class="event-card">
         <div class="event-card-front">
-            <div class="event-image" style="background-image: url('https://timodo22.github.io/tksportsbyspectux/assets/imgs/shot.jpg');">
+            <div class="event-image" style="background-image: url('assets/imgs/swedencard.png');">
                 <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
             </div>
             <div class="event-info">
                 <div class="event-date">
-                    <i class="far fa-calendar-alt"></i> August 2025
+                    <i class="far fa-calendar-alt"></i> 28th April - 1st May
                 </div>
-                <h3 class="event-title">Pre-season Camp</h3>
-                <p class="event-description">Get your season off to a flying start! 💪🏋️</p>
+                <h3 class="event-title">Färjestad CCM x TK Sports Acadamy</h3>
+                <p class="event-description">Elevate your game with SHL & NHL superstar coaches, and much more 💪🏋️</p>
                 <div class="event-footer">
                     <div class="event-details">
                         <div><i class="fas fa-map-marker-alt"></i> Ijssportcentrum Eindhoven</div>
-                        <div><i class="far fa-clock"></i> TBD</div>
+                        <div><i class="far fa-clock"></i>07:45 - 16:15</div>
                     </div>
                 </div>
                 <div class="click-hint">
@@ -164,10 +164,10 @@
         </div>
         <div class="event-card-back">
             <div class="profile-section">
-                <div class="profile-img" style="background-image: url('/api/placeholder/100/100');"></div>
+                <div class="profile-img" style="background-image: url('/assets/imgs/logo-blac.png');"></div>
                 <div class="profile-info">
-                    <h4>TLC Hockey</h4>
-                    <p>In collaboration with</p>
+                    <h4>TK Sports Academy</h4>
+         
                 </div>
             </div>
 
@@ -178,7 +178,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Date</h5>
-                        <p>August</p>
+                        <p>April 28th - 1st May</p>
                     </div>
                 </div>
 
@@ -188,7 +188,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Time</h5>
-                        <p>TBD</p>
+                        <p>07:45 - 16:15</p>
                     </div>
                 </div>
 
@@ -207,50 +207,550 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="back-detail-text">
-                        <h5>Age</h5>
-                        <p>12-17</p>
+                        <h5>Age Groups</h5>
+                        <p>u7-u11, u13-u15, u17-Eredivisie</p>
                     </div>
                 </div>
 
                 <div class="back-detail-item">
                     <div class="back-detail-icon">
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-euro-sign"></i>
                     </div>
                     <div class="back-detail-text">
-                        <h5>Special Guests</h5>
-                        <p>Coming soon...</p>
+                        <h5>Pricetag</h5>
+                        <p>599,-</p>
                     </div>
                 </div>
             </div>
 
             <div class="back-footer">
                 <div class="price-tag">
-                    <i class="fas fa-euro-sign"></i> TBD
+                    <i class="fas"></i> More info
                 </div>
-                <a href="https://forms.gle/your-google-form-link" class="event-btn">Sign up →</a>
+                <a href="Form.html" class="event-btn">Sign up →</a>
             </div>
         </div>
     </div>
 </div>
-                </div>
+      
+
+
+
+
+
+
+</div>
                 
                 <!-- Timer Second -->
                 <div class="countdown-info">
                     <h1 class="subtitle">next event:</h1>
                     <h1 class="title" id="countdown-timer">Loading...</h1>
-                    <h1 class="subtitle">pre-season ice hockey camp</h1>
+                    <h1 class="subtitle">Färjestad CCM x TK Sports Acadamy Ice Hockey Camp - Eindhoven</h1>
                     <a href="Form.html" class="btn-signup">Sign Up</a>
                 </div>
             </div>
         </div>
         
-        <div class="shape">
-            <svg viewBox="0 0 1500 200" style="color: white;">
+        <div class="shape" style="z-index: 90;">
+            <svg viewBox="0 0 1500 200" style="color: white; z-index: 1;">
                 <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z" fill="white"/>
             </svg>
         </div>  
     </header>
+<!-- Modal Popup CSS -->
+<style>
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 99999999999;
+    overflow-y: auto;
+}
 
+.navbar.fixed-top,
+.navbar.custom-navbar,
+.navbar {
+    z-index: 1030 !important;
+}
+
+.modal-overlay.active {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+    z-index: 10000000;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fix voor navbar z-index conflict */
+.navbar.fixed-top,
+.navbar.custom-navbar,
+.navbar {
+    z-index: 1030 !important;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100000 !important;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-out;
+    z-index: 100001 !important;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff6e42;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    z-index: 100002 !important;
+}
+
+.modal-close:hover {
+    background-color: #e55c32;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #ff6e42 0%, #ff8800 100%);
+    color: white;
+    padding: 40px 30px 30px;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.modal-header p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+}
+
+.modal-body {
+    padding: 30px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #ff6e42;
+    border-radius: 10px;
+}
+
+.modal-section {
+    margin-bottom: 30px;
+}
+
+.modal-section h3 {
+    color: #ff6e42;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff6e42;
+    padding-bottom: 10px;
+}
+
+.modal-section p, .modal-section ul {
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.modal-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.modal-section ul li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.modal-section ul li:before {
+    content: "→";
+    color: #ff6e42;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.coach-card {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.coach-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.coach-image {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff6e42;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.coach-info {
+    flex: 1;
+}
+
+.coach-card h4 {
+    color: #ff6e42;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.coach-card p {
+    margin: 0;
+    color: #555;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-item {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-item strong {
+    color: #ff6e42;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.price-highlight {
+    background-color: #ff6e42;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.modal-footer {
+    padding: 20px 30px 30px;
+    text-align: center;
+}
+
+.modal-signup-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    background-color: #ff6e42;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-signup-btn:hover {
+    background-color: #e55c32;
+    color: white;
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 20px auto;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .modal-body {
+        padding: 20px;
+        max-height: 50vh;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .coach-card {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .coach-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal-overlay {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        margin: 10px auto;
+    }
+    
+    .modal-header {
+        padding: 30px 20px 20px;
+    }
+    
+    .modal-body {
+        padding: 15px;
+    }
+    
+    .coach-card {
+        padding: 20px;
+    }
+}
+</style>
+
+<!-- Modal Popup HTML -->
+<div class="modal-overlay" id="eventModal">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+        
+        <div class="modal-header">
+            <h2>Färjestad CCM x TK Sports Academy</h2>
+            
+        </div>
+        
+        <div class="modal-body">
+            <div class="modal-section">
+                <h3>Take Your Game to the Next Level!</h3>
+                <p>Join us this Spring for an unforgettable week of elite hockey training — right here in Ijssportcentrum Eindhoven from <strong>28th April - 1st May</strong>!</p>
+                <p><strong>Location:</strong> Antoon Coolenlaan 3, 5644 RX Eindhoven, Netherlands</p>
+            </div>
+
+            <div class="price-highlight">
+                € 599 per participant
+            </div>
+
+            <div class="modal-section">
+                <h3>About Färjestad BK</h3>
+                <p>Train with coaches from Färjestad BK, one of Sweden's most successful hockey clubs! Färjestad competes in the Swedish Hockey League (SHL) — the top professional league in Sweden — and were regular season champions last year. Their experienced coaching staff has worked with superstar NHL players and SHL professionals, bringing world-class knowledge and techniques straight to you.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Meet the Team of Coaches!</h3>
+                
+                <div class="coach-card">
+                    <img src="assets/imgs/niclas.jpg" alt="Niclas Glader" class="coach-image">
+                    <div class="coach-info">
+                        <h4>Niclas Glader</h4>
+                        <p>Niclas is a pro skills coach with many years of experience coaching players, all from NHL-superstars to the youngest players. His main area of coaching is power skating and stick handling.</p>
+                    </div>
+                </div>
+
+                <div class="coach-card reverse">
+                    <img src="assets/imgs/linnea.jpg" alt="Linnea Persson" class="coach-image">
+                    <div class="coach-info">
+                        <h4>Linnea Persson</h4>
+                        <p>Linnea is our strength and conditioning coach and has as well as years of experience working in our camps also a degree in sports science.</p>
+                    </div>
+                </div>
+
+                <div class="coach-card">
+                    <img src="assets/imgs/alexander.jpg" alt="Alexander Olsson" class="coach-image">
+                    <div class="coach-info">
+                        <h4>Alexander Olsson</h4>
+                        <p>Alex has had a career as a goalie in both Sweden U20 elite league and in North America. He now coaches Färjestad's U15 goalies and works on Färjestad's camps.</p>
+                    </div>
+                </div>
+
+                <div class="coach-card reverse">
+                    <img src="assets/imgs/tobias.jpg" alt="Tobias Nilsson" class="coach-image">
+                    <div class="coach-info">
+                        <h4>Tobias Nilsson</h4>
+                        <p>Tobias has grown up and played in Färjestad BK's organization during his junior years. He has now switched over to the coaching side and besides being a U15 head coach also works at all of Färjestad's Camps. Tobias main area is game understanding and stick handling.</p>
+                    </div>
+                </div>
+
+                <div class="coach-card">
+                    <img src="assets/imgs/joakim.jpg" alt="Joakim Hedlund" class="coach-image">
+                    <div class="coach-info">
+                        <h4>Joakim Hedlund</h4>
+                        <p>Joakim is one of our own coaches with lots of experience in coaching teams on different levels, such as skills coaching on our camps. His main area is power skating and stick handling.</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 20px;"><strong>Learn more:</strong></p>
+                <p><a href="https://www.farjestadbk.se/" target="_blank" style="color: #ff6e42;">Färjestad BK Official Site</a></p>
+                <p><a href="https://www.farjestadccmhockeycamp.se/hockey-camp" target="_blank" style="color: #ff6e42;">Färjestad CCM Hockey Camp</a></p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Who Can Join</h3>
+                <p>We welcome players of all ages and will have 3 groups to ensure the best environment for all:</p>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Group 1</strong>
+                        <p>U17 - Eredivisie</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Group 2</strong>
+                        <p>U13 - U15</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>Group 3</strong>
+                        <p>U7 - U11</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-section">
+                <h3>What to Expect</h3>
+                <p>Each day is packed with high-level training and fun:</p>
+                <ul>
+                    <li>3 on-ice sessions per day focusing on skating, puck control, and game sense</li>
+                    <li>Daily off-ice stickhandling and shooting drills</li>
+                    <li>Mobility, strength, and conditioning sessions to boost your performance</li>
+                    <li>Lunch and snacks included to keep you fuelled and ready to play</li>
+                </ul>
+            </div>
+
+            <div class="modal-section">
+                <h3>Camp Fee</h3>
+                <p>Total costs amount to <strong>€599</strong>. Registration is confirmed with a <strong>€300 deposit</strong>.</p>
+                <p>Once we receive your form, we'll contact you with all details to finalize your registration.</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Ready to Join?</h3>
+                <p>Fill out the form to secure your spot — spaces are limited! If you have any questions, don't hesitate to contact us via <a href="mailto:info@tksportsacademy.nl" style="color: #ff6e42;">info@tksportsacademy.nl</a>, we're happy to help!</p>
+            </div>
+
+            <div class="modal-section">
+                <h3>Don't Miss Out!</h3>
+                <p>Get ready for a camp full of hockey, fun, and new friendships. All while learning from Sweden's best coaches!</p>
+                <p><strong>See you on the ice!</strong></p>
+            </div>
+        </div>
+
+        <div class="modal-footer" style="align-items: center;">
+            <a href="Form.html" class="modal-signup-btn">Sign Up Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal JavaScript -->
+<script>
+function openModal() {
+    document.getElementById('eventModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('eventModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking outside
+document.getElementById('eventModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
+
+// Update the "More info" button in the back-footer to open the modal
+document.addEventListener('DOMContentLoaded', function() {
+    const moreInfoButton = document.querySelector('.back-footer .price-tag');
+    if (moreInfoButton) {
+        moreInfoButton.style.cursor = 'pointer';
+        moreInfoButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openModal();
+        });
+    }
+});
+</script>
     <style>
 :root {
     --primary-color: #ff7a00;
@@ -634,6 +1134,8 @@ body {
 .profile-info h4 {
     margin: 0 0 5px 0;
     color: var(--dark-gray);
+    align-items: center;  
+    
 }
 
 .profile-info p {
@@ -679,7 +1181,7 @@ body {
 }
 
 .price-tag {
-    background-color: var(--light-primary);
+    background-color: var(--primary-color);
     padding: 5px 15px;
     border-radius: 20px;
     color: white;
@@ -775,7 +1277,6 @@ body {
     }
     
     .event-btn {
-        margin-top: 15px;
         align-self: flex-end;
     }
     
@@ -862,7 +1363,7 @@ body {
     
     <script>
         // De datum waarop we willen aftellen (30 april 2025)
-        const countdownDate = new Date("August 1, 2025 00:00:00").getTime();
+        const countdownDate = new Date("April 28, 2026 00:00:00").getTime();
     
         // Update de timer elke seconde
         const x = setInterval(function() {

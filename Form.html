@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your personal development with expierienced knowledge">
+    <meta name="author" content="Devcrud">
+    <meta name="theme-color" content="#ff6e42"/>
+
+
+
+    <title>Tk sports academy</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" href="/assets/imgs/logo-blac.png" type="image/png">
+    
+    <!-- Bootstrap + LeadMark main styles -->
+	<link rel="stylesheet" href="assets/css/leadmark.css">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- page Navigation -->
+    <nav class="navbar custom-navbar navbar-expand-md navbar-light fixed-top" data-spy="affix" data-offset-top="10" style="padding-left: 16px; padding-right: 16px;">
+        <div class="container" style="margin-top: 10px; margin-bottom: 10px; padding: 0; ">
+                <a class="navbar-brand" href="index.html">
+  <img src="assets/imgs/logo-white.png" alt="TK Sports Academy" class="logo–white">
+  <img src="assets/imgs/logo-blac.png" alt="TK Sports Academy" class="logo–black">
+</a>
+
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">                     
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Specialists.html">Specialists</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-us.html">About us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Of Second Navigation -->
+
+    <style>
+    /* Standaard: alleen wit logo tonen */
+.navbar-brand .logo–black {
+  display: none;
+}
+.navbar-brand .logo–white {
+  display: block;
+}
+
+/* Zodra Bootstrap Affix de klasse .affix toevoegt: */
+.navbar.affix .logo–white {
+  display: none;
+}
+.navbar.affix .logo–black {
+  display: block;
+}
+
+        .btn-signup {
+            padding: 12px 30px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    
+        .btn-signup:hover {
+            background: white;
+            color: black;
+        }
+        
+        .shape svg {
+    fill: white;
+}
+.header {
+    position: relative;
+    overflow: hidden;
+}
+
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.overlay {
+    /* bestaande overlay stijlen behouden */
+    position: relative;
+    z-index: 1;
+}
+
+        
+    </style>
+    
+    <!-- Page Header -->
+    <header class="header">
+        <img src="assets/imgs/FromHero.png" alt="Background" class="header-bg">
+
+        <div class="overlay">
+            <h1 class="subtitle">Welcome to</h1>
+            <h1 class="title" id="countdown-timer">Sign up!</h1>
+            <!-- <a href="#signup" class="btn-signup">Sign Up</a>   -->
+        </div>  
+        <div class="shape">
+            <svg viewBox="0 0 1500 200" style="color: white;">
+                <path d="m 0,240 h 1500.4828 v -71.92164 c 0,0 -286.2763,-81.79324 -743.19024,-81.79324 C 300.37862,86.28512 0,168.07836 0,168.07836 Z" fill="white"/>
+            </svg>
+            
+            
+        </div>  
+    </header>
+
+
+
+
+
+<style>
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .form-section {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid #ff6b00;
+        }
+
+        .form-section-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .required {
+            color: #ff6b00;
+            margin-left: 3px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #ff6b00;
+            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-row-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            padding-right: 40px;
+        }
+
+        .participant-count {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .count-option {
+            flex: 1;
+            min-width: 60px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            background-color: #fff;
+        }
+
+        .count-option:hover {
+            border-color: #ff6b00;
+            background-color: #fff5f0;
+        }
+
+        .count-option.active {
+            border-color: #ff6b00;
+            background-color: #ff6b00;
+            color: white;
+        }
+
+        .participant-forms {
+            margin-top: 30px;
+        }
+
+        .participant-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .participant-card-title {
+            font-size: 1.2rem;
+            color: #ff6b00;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input[type="radio"],
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #ff6b00;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 30px;
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            background-color: #e05e00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+
+        .error-message {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #f5c6cb;
+            display: none;
+        }
+
+        textarea.form-control {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .info-text {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .registration-section {
+                padding: 40px 15px;
+            }
+
+            .form-section {
+                padding: 25px 20px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .form-row,
+            .form-row-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .count-option {
+                min-width: 50px;
+            }
+
+            .participant-card {
+                padding: 20px;
+            }
+
+            .checkbox-group {
+                gap: 15px;
+            }
+        }
+
+        .terms-expandable {
+            margin-top: 30px;
+        }
+
+        .terms-toggle {
+            width: 100%;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #ff6b00 0%, #e05e00 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .terms-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 0, 0.3);
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s ease;
+            font-size: 0.8rem;
+        }
+
+        .terms-toggle.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .terms-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .terms-content.active {
+            max-height: 2000px;
+        }
+
+        .terms-text {
+            background: #f9f9f9;
+            padding: 30px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 2px solid #e0e0e0;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .terms-text h3 {
+            color: #ff6b00;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff6b00;
+        }
+
+        .terms-text h4 {
+            color: #333;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .terms-text p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .form-section-title {
+                font-size: 1.3rem;
+            }
+
+            .submit-btn {
+                font-size: 1rem;
+            }
+
+            .terms-text {
+                padding: 20px;
+            }
+
+            .terms-text h3 {
+                font-size: 1.2rem;
+            }
+
+            .terms-text h4 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <section class="registration-section">
+        <div class="container">
+            <div id="successMessage" class="success-message">
+                ✓ Registration successful! We'll contact you soon.
+            </div>
+
+            <div id="errorMessage" class="error-message">
+                ✗ Something went wrong. Please try again.
+            </div>
+
+            <form id="registrationForm">
+                <!-- Parent/Guardian Information -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Parent/Guardian Information</h2>
+                    <p class="info-text">If you are a participant aged 18 and up, you may fill in your own details.</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Email address<span class="required">*</span></label>
+                        <input type="email" name="parent_email" class="form-control" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First name<span class="required">*</span></label>
+                            <input type="text" name="parent_firstname" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last name<span class="required">*</span></label>
+                            <input type="text" name="parent_lastname" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date of birth<span class="required">*</span></label>
+                        <input type="date" name="parent_dob" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Address and house number<span class="required">*</span></label>
+                        <input type="text" name="parent_address" class="form-control" required>
+                    </div>
+
+                    <div class="form-row-3">
+                        <div class="form-group">
+                            <label class="form-label">Postcode<span class="required">*</span></label>
+                            <input type="text" name="parent_postcode" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">City<span class="required">*</span></label>
+                            <input type="text" name="parent_city" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Country<span class="required">*</span></label>
+                            <input type="text" name="parent_country" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mobile phone number<span class="required">*</span></label>
+                        <input type="tel" name="parent_phone" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Participant Count -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Participant Information</h2>
+                    <div class="form-group">
+                        <label class="form-label">Number of participants joining camp:<span class="required">*</span></label>
+                        <div class="participant-count">
+                            <div class="count-option active" data-count="1">1</div>
+                            <div class="count-option" data-count="2">2</div>
+                            <div class="count-option" data-count="3">3</div>
+                            <div class="count-option" data-count="4">4</div>
+                            <div class="count-option" data-count="5">5</div>
+                        </div>
+                        <input type="hidden" name="participant_count" value="1">
+                    </div>
+
+                    <div class="participant-forms" id="participantForms">
+                        <!-- Participant forms will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-section">
+                    <h2 class="form-section-title">Terms and Conditions</h2>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="agree_media" id="agreeMedia" required>
+                            <label for="agreeMedia">I agree to be in the pictures and videos<span class="required">*</span></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="agree_terms" id="agreeTerms" required>
+                            <label for="agreeTerms">I agree to the terms and conditions of purchase and confirm that I have read the privacy policy<span class="required">*</span></label>
+                        </div>
+                    </div>
+
+                    <div class="terms-expandable">
+                        <button type="button" class="terms-toggle" id="termsToggle">
+                            <span>📄 Read Full Terms and Conditions</span>
+                            <span class="toggle-icon">▼</span>
+                        </button>
+                        
+                        <div class="terms-content" id="termsContent">
+                            <div class="terms-text">
+                                <h3>Terms of Purchase and Delivery</h3>
+                                <p>These Terms of Purchase and Delivery apply between Färjestad BK Hockeyallians Ekonomisk förening (hereinafter referred to as the Organizer) and you (hereinafter referred to as the Customer) who purchase tickets and/or related goods via Tickster's system.</p>
+
+                                <h4>General</h4>
+                                <p>Tickster provides a ticket sales system where organizers can sell tickets and goods to their customers. Tickster is therefore only responsible for the technical mediation of tickets through the sales system. The organizer is fully responsible for its own event and Tickster is therefore not responsible for any part of the event. Tickster is therefore not responsible for the content or implementation of the event and is also not liable for any loss to you or any other customer arising from the event and the organizer's responsibility.</p>
+                                <p>Questions of this type are referred to the organizer of the respective event.</p>
+
+                                <h4>Personal Data</h4>
+                                <p>The personal data you provide will be handled with respect and in accordance with the General Data Protection Regulation (Regulation (EU) No 2016/679 of the European Parliament and of the Council, GDPR). Read more about our handling in our Personal Data Handling Policy.</p>
+
+                                <h4>Prices</h4>
+                                <p>Prices listed include VAT. Currency is shown in the webshop.</p>
+                                <p>We reserve the right to any price increases, VAT adjustments, printing errors, price errors, final sales, stock errors, etc. A ticket or item that has already been sent to you will not be affected by any increase or decrease in price that occurs after the order is placed, for example in the form of sales, campaigns, discount codes or changes in pricing.</p>
+
+                                <h4>Security</h4>
+                                <p>Tickster actively works to ensure that purchasing tickets and goods via the internet and other channels is safe and secure. Part of this work includes analyzing purchase data, including payment information, to prevent fraud. Read more about how we handle your information in our Personal Data Management Policy.</p>
+                                <p>If our analysis of your purchase does not provide a clear answer, we reserve the right to manually review your purchase before completing it. In the event of such a review, we may contact you.</p>
+
+                                <h4>Young People</h4>
+                                <p>If you are under 18 years of age, you must obtain parental consent to enter into an agreement via the internet. If you are over 16 years of age and have earned the money yourself, this does not apply.</p>
+                                <p>Tickster and the Organizer reserve the right to contact guardians of ticket buyers under 18 years of age. If you have not obtained parental consent, we cannot guarantee that your purchase is valid.</p>
+
+                                <h4>Cancelled Event/Repurchase</h4>
+                                <p>You are responsible for checking that the event has not been cancelled or moved. If an event is cancelled, you must immediately contact the responsible Organizer, who is responsible for questions about their possible redemption of tickets. In some cases, Tickster redeems tickets on behalf of the Organizer in the event of a cancelled event. In the event of a cancelled event, postage and other fees paid in connection with the purchase of the ticket are not refunded.</p>
+                                <p>If you believe that your ticket should be repurchased, you must notify Tickster or the Organizer of your claim for a refund no later than two (2) months from the event date/day when the event should have taken place. Failure to do so will forfeit your right to any refund.</p>
+
+                                <h4>Force Majeure</h4>
+                                <p>We consider ourselves exempt from fulfilling our obligations in these terms and conditions in the event of changed legislation, government action, labor conflict, fire, flood, war, terrorism, sabotage, major accidents or similar events.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Registration</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Participant count selector
+        const countOptions = document.querySelectorAll('.count-option');
+        const participantCountInput = document.querySelector('input[name="participant_count"]');
+        const participantFormsContainer = document.getElementById('participantForms');
+
+        countOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                countOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                const count = parseInt(this.getAttribute('data-count'));
+                participantCountInput.value = count;
+                generateParticipantForms(count);
+            });
+        });
+
+        function generateParticipantForms(count) {
+            participantFormsContainer.innerHTML = '';
+            
+            for (let i = 1; i <= count; i++) {
+                const participantCard = document.createElement('div');
+                participantCard.className = 'participant-card';
+                participantCard.innerHTML = `
+                    <h3 class="participant-card-title">Participant ${i}</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First name<span class="required">*</span></label>
+                            <input type="text" name="participant_${i}_firstname" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last name<span class="required">*</span></label>
+                            <input type="text" name="participant_${i}_lastname" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Date of birth<span class="required">*</span></label>
+                        <input type="date" name="participant_${i}_dob" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Club name<span class="required">*</span></label>
+                        <input type="text" name="participant_${i}_club" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Position<span class="required">*</span></label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" name="participant_${i}_position" value="Goalie" id="p${i}_goalie" required>
+                                <label for="p${i}_goalie">Goalie</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="participant_${i}_position" value="Defence" id="p${i}_defence">
+                                <label for="p${i}_defence">Defence</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="participant_${i}_position" value="Forward" id="p${i}_forward">
+                                <label for="p${i}_forward">Forward</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" name="participant_${i}_position" value="Defence/Forward" id="p${i}_both">
+                                <label for="p${i}_both">Defence/Forward</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">T-shirt size<span class="required">*</span></label>
+                            <select name="participant_${i}_tshirt" class="form-control" required>
+                                <option value="">Select size</option>
+                                <option value="XS">XS</option>
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                                <option value="XXL">XXL</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Possible allergy</label>
+                            <input type="text" name="participant_${i}_allergy" class="form-control" placeholder="None">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Other information</label>
+                        <textarea name="participant_${i}_other" class="form-control" placeholder="Any additional information..."></textarea>
+                    </div>
+                `;
+                participantFormsContainer.appendChild(participantCard);
+            }
+        }
+
+        // Initialize with 1 participant
+        generateParticipantForms(1);
+
+        // Terms and Conditions Toggle
+        const termsToggle = document.getElementById('termsToggle');
+        const termsContent = document.getElementById('termsContent');
+
+        termsToggle.addEventListener('click', function() {
+            this.classList.toggle('active');
+            termsContent.classList.toggle('active');
+        });
+
+        // Form submission
+        const form = document.getElementById('registrationForm');
+        const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            const formData = new FormData(form);
+            
+            // Prepare data for Web3Forms
+            const data = {
+                access_key: "ba7e0f9a-7e3a-4df2-8e08-527e179448f7", // Vervang dit met jouw Web3Forms access key
+                subject: "New Camp Registration - TK Sports Academy"
+            };
+
+            // Add all form data
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            try {
+                // Send to Web3Forms
+                const web3Response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const web3Result = await web3Response.json();
+
+                if (web3Result.success) {
+                    // Send to Google Sheets (via Apps Script Web App)
+                    // Vervang de URL hieronder met jouw Google Apps Script Web App URL
+                    const sheetsData = {};
+                    for (let [key, value] of formData.entries()) {
+                        sheetsData[key] = value;
+                    }
+                    sheetsData.timestamp = new Date().toISOString();
+
+                    await fetch("YOUR_GOOGLE_APPS_SCRIPT_URL", {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(sheetsData)
+                    });
+
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    form.reset();
+                    generateParticipantForms(1);
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'block';
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Registration';
+            }
+        });
+    </script>
+
+
+
+
+    
+    <style>
+  /* Zorg dat input/textarea tekst wit is */
+  #contactForm .form-control {
+    color: #fff !important;
+  }
+  /* placeholder ook wit */
+  #contactForm .form-control::placeholder {
+    color: rgba(255,255,255,0.7);
+    opacity: 1;
+  }
+  /* Voor oudere browsers */
+  #contactForm .form-control:-ms-input-placeholder,
+  #contactForm .form-control::-ms-input-placeholder,
+  #contactForm .form-control::-webkit-input-placeholder {
+    color: #fff;
+  }
+</style>
+
+    
+    <style>
+
+      
+        :root {
+            --primary-color: #ff6b00;
+            --primary-hover: #e05e00;
+            --secondary-color: #333;
+            --light-color: #fff;
+            --dark-color: #343a40;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .container-fluid {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            max-width: 1400px; /* Bredere container */
+        }
+
+        #service .container-fluid {
+            padding-right: 170px;
+            padding-left: 170px;
+            margin-right: auto;
+            margin-left: auto;
+            width: 100%;
+            max-width: 1400px; /* Bredere container */
+        }
+
+        @media (max-width: 991px) {
+            #service .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+        
+        /* Highlight text styling */
+        .highlight-text {
+            color: #ff6b00;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /* Special Content Styling */
+        .special-content-container {
+            position: relative;
+        }
+
+        .special-content {
+            position: relative;
+            width: 100%; /* Breder maken */
+        }
+
+        /* Special Item Styling with Background Images */
+       /* styles.css */
+
+/* 1. Container full-width “breken” */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 auto;
+}
+
+/* 2. Special content kolomstructuur */
+.special-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* 3. Elk item als flex-row of -row-reverse */
+.special-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-left: 250px;
+  padding-right: 250px;              /* zwarte tekst */
+  background-color: #fff;     /* witte achtergrond */
+  flex-wrap: wrap;            /* voor mobiel */
+  width: 99vw;               /* vol scherm */
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding-bottom: 20px;
+  
+}
+
+
+/* afwisselend volgorde: odd = normaal, even = omgekeerd */
+.special-item:nth-child(odd) {
+  flex-direction: row;
+}
+.special-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* 4. Afbeelding & content elk 50% */
+.item-image,
+.item-content {
+  flex: 0 0 49%;
+  max-width: 50%;
+  
+}
+
+/* img schaalt netjes */
+.item-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Titel- en tekstkleur expliciet zwart */
+.special-title,
+.special-text {
+  color: #000;
+}
+
+/* Opmaak titel & tekst */
+.special-title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 2.2rem;
+  border-left: 5px solid #ff6b00;
+  padding-left: 15px;
+}
+
+.special-text {
+  margin-bottom: 25px;
+  line-height: 1.7;
+  font-size: 1.1rem;
+
+    text-align: justify;
+  text-align-last: left;      /* moderne browsers */
+  -moz-text-align-last: justify; /* Firefox */
+  -ms-text-align-last: justify;  /* IE/Edge */
+
+  /* voorkom dat woorden of links “uitsteken” */
+  box-sizing: border-box;
+  word-break: break-word;        /* breek lange woorden of URLs */
+  hyphens:auto;   
+}
+
+/* Responsief */
+@media (max-width: 991px) {
+  .special-item {
+    padding: 50px 20px;
+  }
+  .special-title {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 767px) {
+  .special-item {
+    flex-direction: column !important; /* stapel op klein scherm */
+    padding: 40px 15px;
+  }
+  .item-image,
+  .item-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .special-title {
+    font-size: 1.5rem;
+  }
+  .special-text {
+    font-size: 1rem;
+  }
+  .section-title {
+    font-size: 1.9rem;
+  }
+}
+
+        .learn-more-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            border-color: #ff6b00;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #ff6b00;
+        }
+
+        .learn-more-btn:hover {
+            background-color: #ff6b00;
+            border-color: #ff6b00;
+            color: white;
+        }
+
+        /* Section titles */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        /* About Us Section */
+        .about-section {
+            padding: 100px 0;
+            background-color: white
+        }
+        
+        .founder-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .founder-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .founder-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-bottom: 3px solid #ff6b00;
+        }
+        
+        .founder-info {
+            padding: 25px;
+        }
+        
+        .founder-name {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .founder-title {
+            color: #ff6b00;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .founder-bio {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .about-section {
+    padding: 100px 0;
+    background-color: white;
+    overflow-x: hidden; /* Add this line */
+}
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: #ff6b00;
+            color: #fff;
+        }
+        
+        /* Orange accent elements */
+        .accent-circle {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255,107,0,0.1);
+            z-index: 0;
+        }
+        
+        .accent-circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -50px;
+        }
+
+        
+        
+        .accent-circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -100px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .special-item {
+                padding: 50px 20px;
+            }
+            
+            .special-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-section {
+                padding: 60px 0;
+            }
+        }
+        .founder-img,
+.item-image img {
+  border-radius: 15px;
+}
+
+
+        
+        @media (max-width: 767px) {
+            .special-item {
+                min-height: auto;
+                padding: 40px 15px;
+            }
+            
+            .special-title {
+                font-size: 1.5rem;
+            }
+            
+            .special-text {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.9rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 30px;
+            }
+            
+            .founder-img {
+                height: 250px;
+            }
+        }
+        .header .overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* 0.2 = 20% zwart */
+}
+        #about .section-subtitle {
+  max-width: 800px;              /* voorkomt dat de tekst te breed wordt */
+  margin: 0 auto 2rem;           /* centreert en geeft ondermarge */
+  padding: 1rem 2rem;            /* binnenruimte, zodat de tekst niet tegen de rand staat */
+  font-size: 1.2rem;
+  line-height: 1.6;
+  
+  /* zorg dat alle regels, inclusief de laatste, netjes uitvullen */
+  text-align: justify;
+  text-align-last: left;      /* moderne browsers */
+  -moz-text-align-last: justify; /* Firefox */
+  -ms-text-align-last: justify;  /* IE/Edge */
+
+  /* voorkom dat woorden of links “uitsteken” */
+  box-sizing: border-box;
+  word-break: break-word;        /* breek lange woorden of URLs */
+  hyphens:auto;             /* optionele koppeling van woorden bij regeluiteinde */
+            /* alles binnen de box houden */
+}
+    </style>
+</head>
+<body>
+
+
+<!-- About Us Section -->
+
+
+<!-- Font Awesome voor sociale media iconen -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- End of Testmonial Section -->
+<style>
+  /* Zorg dat input/textarea tekst wit is */
+  #contactForm .form-control {
+    color: #fff !important;
+  }
+
+  /* Zorg dat de placeholder ook wit is */
+  #contactForm .form-control::placeholder {
+    color: rgba(255,255,255,0.7); /* pas de opacity naar wens aan */
+    opacity: 1; /* sommige browsers negeren rgba-opacity anders */
+  }
+
+  /* Voor oudere browsers (IE) */
+  #contactForm .form-control:-ms-input-placeholder { color: #fff; }
+  #contactForm .form-control::-ms-input-placeholder { color: #fff; }
+  #contactForm .form-control::-webkit-input-placeholder { color: #fff; }
+</style>
+    <!-- Contact Section -->
+    <!-- Contact Section -->
+<!-- Contact Section -->
+    <section id="contact" class="section pb-0" style="position: relative; color: #fff; margin-top: 30px;">
+        <!-- Background image -->
+        <img src="assets/imgs/section.jpg" alt="Background" style="position: absolute; width: 100%; height: 100%; object-fit: cover; top: 0; left: 0; z-index: 1;">
+        
+        <!-- Overlay div -->
+        <div style="position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.8); z-index: 2;"></div>
+        
+        <div class="container" style="margin-bottom: 0; position: relative; z-index: 3;">
+            <div class="row align-items-center">
+                <div class="col-md-5 my-3">
+                    <h6 class="mb-0">Email</h6>
+                    <p class="mb-0">
+                        <a href="mailto:info@tksportsacademy.nl" style="color: #fff;">info@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-0">
+                        <a href="mailto:thibault@tksportsacademy.nl" style="color: #fff;">thibault@tksportsacademy.nl</a>
+                    </p>
+                    <p class="mb-4">
+                        <a href="mailto:karlis@tksportsacademy.nl" style="color: #fff;">karlis@tksportsacademy.nl</a>
+                    </p>
+        
+                    <h6 class="mb-0">Instagram</h6>
+                    <p class="mb-4">
+                        <a href="https://www.instagram.com/tlc_eindhoven?igsh=MWoxZ3d0b3B5ZnI1Nw==" target="_blank" style="color: #fff;">
+                            @TLC_eindhoven 
+                        </a>
+                    </p>
+                </div>
+        
+                <div class="col-md-7">
+        <form id="contactForm" novalidate>
+          <h4 class="mb-4">Contact us</h4>
+          <div class="row">
+            <div class="form-group col-sm-4 mb-3">
+              <input type="text" class="form-control text-white rounded-0 bg-transparent" name="name" placeholder="Name" required>
+            </div>
+            <div class="form-group col-sm-4 mb-3">
+              <input type="email" class="form-control text-white rounded-0 bg-transparent" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group col-sm-4 mb-3">
+              <input type="text" class="form-control text-white rounded-0 bg-transparent" name="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group col-12 mb-3">
+              <textarea name="message" cols="30" rows="4" class="form-control text-white rounded-0 bg-transparent" placeholder="Message" required></textarea>
+            </div>
+            <div class="form-group col-12 mb-0">
+              <button type="submit" class="btn btn-primary rounded w-md mt-3" style="background-color: #ff6b00; border-color: #ff6b00;">Send</button>
+            </div>
+          </div>
+        </form>
+         <script>
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+
+      // Simpele HTML5 validatie check
+      if (!form.checkValidity()) {
+        alert("Vul alstublieft alle velden correct in.");
+        return;
+      }
+
+      // Controleer cooldown 10 minuten
+      const lastSent = localStorage.getItem("lastFormSent");
+      const now = Date.now();
+      if (lastSent && now - parseInt(lastSent) < 10 * 60 * 1000) {
+        alert("Je kunt dit formulier maar één keer per 10 minuten indienen.");
+        return;
+      }
+
+      const data = {
+        name: form.name.value.trim(),
+        email: form.email.value.trim(),
+        subject: form.subject.value.trim(),
+        message: form.message.value.trim()
+      };
+
+      const webhookURL = "https://discord.com/api/webhooks/1384532014316781617/Vx6U-aKN82omo0lPM07deoeA4n49eZMRpjK4KLwpsFkqFEA9JSu3kEcFWX1ftG5tSCVq";
+
+      const payload = {
+        content: `📬 **Nieuw bericht van contactformulier**\n\n**Naam:** ${data.name}\n**Email:** ${data.email}\n**Onderwerp:** ${data.subject}\n**Bericht:** ${data.message}`
+      };
+
+      try {
+        const response = await fetch(webhookURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          localStorage.setItem("lastFormSent", now.toString());
+          alert("Bericht succesvol verzonden!");
+          form.reset();
+        } else {
+          alert("Er ging iets mis. Probeer het later opnieuw.");
+        }
+      } catch (error) {
+        console.error("Error sending message:", error);
+        alert("Fout bij verzenden.");
+      }
+    });
+  </script>
+                </div>
+            </div>
+
+
+
+            <!-- Page Footer -->
+            <footer class="mt-5 py-4 border-top border-secondary">
+                <p class="mb-0 small">&copy; <script>document.write(new Date().getFullYear())</script>, TKsports Acadamy Created By <a href="https://spectux.com" target="_blank" style="color: #ff6b00;">Spectux.com.</a>  All rights reserved </p>     
+            </footer>
+            <!-- End of Page Footer -->  
+        </div>
+    </section>
+	
+	<!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+	<script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Isotope -->
+    <script src="assets/vendors/isotope/isotope.pkgd.js"></script>
+
+    <!-- LeadMark js -->
+    <script src="assets/js/leadmark.js"></script>
+
+</body>
+</html>
