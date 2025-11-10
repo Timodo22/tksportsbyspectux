@@ -139,6 +139,8 @@
 
 
 
+
+
 <style>
 
         .section-subtitle {
@@ -1261,6 +1263,86 @@
   #contactForm .form-control::-ms-input-placeholder { color: #fff; }
   #contactForm .form-control::-webkit-input-placeholder { color: #fff; }
 </style>
+
+
+
+
+<script>
+  const backendUrl = "https://tksports-api-1.onrender.com"; // jouw Render-URL
+
+  document.getElementById("registrationForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const submitBtn = form.querySelector(".submit-btn");
+    const successMessage = document.getElementById("successMessage");
+    const errorMessage = document.getElementById("errorMessage");
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+
+    try {
+      const formData = new FormData(form);
+
+      const parent_info = {
+        email: formData.get("parent_email"),
+        firstname: formData.get("parent_firstname"),
+        lastname: formData.get("parent_lastname"),
+        dob: formData.get("parent_dob"),
+        address: formData.get("parent_address"),
+        postcode: formData.get("parent_postcode"),
+        city: formData.get("parent_city"),
+        country: formData.get("parent_country"),
+        phone: formData.get("parent_phone"),
+      };
+
+      const participants = [];
+      const count = parseInt(formData.get("participant_count"));
+      for (let i = 1; i <= count; i++) {
+        participants.push({
+          firstname: formData.get(`participant_${i}_firstname`),
+          lastname: formData.get(`participant_${i}_lastname`),
+          dob: formData.get(`participant_${i}_dob`),
+          club: formData.get(`participant_${i}_club`),
+          position: formData.get(`participant_${i}_position`),
+          tshirt: formData.get(`participant_${i}_tshirt`),
+          allergy: formData.get(`participant_${i}_allergy`),
+          other: formData.get(`participant_${i}_other`),
+        });
+      }
+
+      const payload = {
+        email: parent_info.email,
+        name: `${parent_info.firstname} ${parent_info.lastname}`,
+        parent_info,
+        participants,
+      };
+
+      const res = await fetch(`${backendUrl}/send-confirmation`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        successMessage.style.display = "block";
+        errorMessage.style.display = "none";
+        form.reset();
+        window.scrollTo({ top: successMessage.offsetTop - 50, behavior: "smooth" });
+      } else {
+        throw new Error(result.error || "Sending failed");
+      }
+    } catch (err) {
+      console.error(err);
+      successMessage.style.display = "none";
+      errorMessage.style.display = "block";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Submit Registration";
+    }
+  });
+</script>
     <!-- Contact Section -->
     <!-- Contact Section -->
 <!-- Contact Section -->
@@ -1315,6 +1397,10 @@
           </div>
         </form>
          <script>
+
+
+
+
     document.getElementById("contactForm").addEventListener("submit", async function(e) {
       e.preventDefault();
 
