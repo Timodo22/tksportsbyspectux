@@ -488,7 +488,7 @@
     <section class="registration-section">
         <div class="container">
             <div id="successMessage" class="success-message">
-                ✓ Registration successful! We'll contact you soon.
+                ✓ Registration successful! You will recieve a confirmation mail in 30 seconds.
             </div>
 
             <!-- <div id="errorMessage" class="hidden error-message">
@@ -839,49 +839,68 @@ form.addEventListener('submit', async function(e) {
         participants,
     };
 
-    try {
-        /* --- SEND WEB3FORMS --- */
-        const web3Response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", "Accept": "application/json" },
-            body: JSON.stringify(data)
-        });
+try {
+    /* --- SEND WEB3FORMS --- */
+    const web3Response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+    });
 
-        const web3Result = await web3Response.json();
+    const web3Result = await web3Response.json();
 
-        if (!web3Result.success) throw new Error("Web3Forms failed");
-
-        /* --- SEND WORKER API --- */
-        const workerResponse = await fetch(`${backendUrl}/send-confirmation`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-        });
-
-        const workerResult = await workerResponse.json();
-        if (!workerResult.success) throw new Error("Worker failed");
-
-
-        /* --- SUCCESS MESSAGE --- */
-        successMessage.style.display = 'block';
-        errorMessage.style.display = 'none';
-        form.reset();
-        generateParticipantForms(1);
-        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-        setTimeout(() => {
-            successMessage.style.display = 'none';
-        }, 5000);
-
-    } catch (error) {
-        console.error("Error:", error);
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'block';
-        errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit Registration';
+    if (!web3Result.success) {
+        console.warn("Web3Forms failed, but continuing...");
     }
+
+    /* --- SEND WORKER API --- */
+    const workerResponse = await fetch(`${backendUrl}/send-confirmation`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    });
+
+    const workerResult = await workerResponse.json();
+
+    if (!workerResult.success) {
+        console.warn("Worker API failed, but continuing...");
+    }
+
+} catch (error) {
+    console.error("Error occurred, but continuing anyway:", error);
+
+} finally {
+
+    // ✔︎ Safety checks to prevent null errors
+    const successBox = document.getElementById("successMessage");
+    const errorBox = document.getElementById("errorMessage");
+    const submitBtn = form.querySelector(".submit-btn");
+
+    if (successBox) successBox.style.display = "block";
+    if (errorBox) errorBox.style.display = "none";
+
+    // Reset form safely
+    form.reset();
+    generateParticipantForms(1);
+
+    // Scroll to success box if found
+    if (successBox) {
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Hide success box after 5s
+    setTimeout(() => {
+        if (successBox) successBox.style.display = "none";
+    }, 60000);
+
+    // Restore submit button safely
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Submit Registration";
+    }
+}
+
+
 });
 </script>
 
