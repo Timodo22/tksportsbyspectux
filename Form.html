@@ -118,7 +118,7 @@
     </style>
     
     <!-- Page Header -->
-    <header class="header">
+    <header class="header header-thin">
         <img src="assets/imgs/FromHero.png" alt="Background" class="header-bg">
 
         <div class="overlay">
@@ -346,6 +346,14 @@
             resize: vertical;
         }
 
+        .hp-field {
+            position: absolute;
+            left: -10000px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
         .info-text {
             font-size: 0.9rem;
             color: #666;
@@ -488,14 +496,19 @@
     <section class="registration-section">
         <div class="container">
             <div id="successMessage" class="success-message">
-                ✓ Registration successful! You will recieve a confirmation mail in 30 seconds.
+                ✓ Registration successful! You will receive a confirmation email within a few minutes (check your spam folder too).
             </div>
 
-            <!-- <div id="errorMessage" class="hidden error-message">
-                ✗ Something went wrong. Please try again.
-            </div> -->
+            <div id="errorMessage" class="error-message">
+                ✗ Something went wrong. Please try again, or email us at <a href="mailto:info@tksportsacademy.nl">info@tksportsacademy.nl</a>.
+            </div>
 
             <form id="registrationForm">
+                <!-- Anti-spam honeypot: hidden for people, bots fill it in -->
+                <div class="hp-field" aria-hidden="true">
+                    <label for="hpWebsite">Website</label>
+                    <input type="text" name="website" id="hpWebsite" tabindex="-1" autocomplete="off">
+                </div>
                 <!-- Parent/Guardian Information -->
                 <div class="form-section">
                     <h2 class="form-section-title">Parent/Guardian Information</h2>
@@ -776,9 +789,14 @@ termsToggle.addEventListener('click', function() {
 const form = document.getElementById('registrationForm');
 const successMessage = document.getElementById('successMessage');
 const errorMessage = document.getElementById('errorMessage');
+const API_URL = "https://tk-sports-api.timosteen22.workers.dev";
+const formStartedAt = Date.now();
 
-// ⬇️ VUL HIER JOUW EIGEN WORKER URL IN
-const backendUrl = "https://tk-sports-api.timosteen22.workers.dev";
+function showMessage(box) {
+    successMessage.style.display = box === successMessage ? 'block' : 'none';
+    errorMessage.style.display = box === errorMessage ? 'block' : 'none';
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
@@ -789,21 +807,12 @@ form.addEventListener('submit', async function(e) {
 
     const formData = new FormData(form);
 
-    /* ---------------------------
-       1) SEND TO WEB3FORMS
-    ---------------------------- */
-    const data = {
-        access_key: "ba7e0f9a-7e3a-4df2-8e08-527e179448f7",
-        subject: "New Camp Registration - TK Sports Academy"
-    };
-
-    for (let [key, value] of formData.entries()) {
-        data[key] = value;
+    // Bots fill in the hidden field: pretend success and stop
+    if (formData.get('website')) {
+        showMessage(successMessage);
+        form.reset();
+        return;
     }
-
-    /* ---------------------------
-       2) SEND TO YOUR WORKER API
-    ---------------------------- */
 
     const parent_info = {
         email: formData.get("parent_email"),
@@ -818,7 +827,7 @@ form.addEventListener('submit', async function(e) {
     };
 
     const participants = [];
-    const count = parseInt(formData.get("participant_count"));
+    const count = parseInt(formData.get("participant_count"), 10) || 1;
     for (let i = 1; i <= count; i++) {
         participants.push({
             firstname: formData.get(`participant_${i}_firstname`),
@@ -833,74 +842,59 @@ form.addEventListener('submit', async function(e) {
     }
 
     const payload = {
-        email: parent_info.email,
-        name: parent_info.firstname + " " + parent_info.lastname,
         parent_info,
         participants,
+        agree_media: formData.get("agree_media") === "on",
+        agree_terms: formData.get("agree_terms") === "on",
+        website: formData.get("website") || "",
+        started_at: formStartedAt
     };
 
-try {
-    /* --- SEND WEB3FORMS --- */
-    const web3Response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(data)
-    });
-
-    const web3Result = await web3Response.json();
-
-    if (!web3Result.success) {
-        console.warn("Web3Forms failed, but continuing...");
+    // Email notification to the TK team (Web3Forms), kept as a backup of the sheet
+    const web3Data = {
+        access_key: "ba7e0f9a-7e3a-4df2-8e08-527e179448f7",
+        subject: "New Camp Registration - TK Sports Academy"
+    };
+    for (const [key, value] of formData.entries()) {
+        if (key !== 'website') web3Data[key] = value;
     }
 
-    /* --- SEND WORKER API --- */
-    const workerResponse = await fetch(`${backendUrl}/send-confirmation`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
-    });
+    const [web3, api] = await Promise.allSettled([
+        fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(web3Data)
+        }).then(r => r.json()),
+        fetch(`${API_URL}/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        }).then(async r => ({ status: r.status, body: await r.json().catch(() => ({})) }))
+    ]);
 
-    const workerResult = await workerResponse.json();
+    const web3Ok = web3.status === 'fulfilled' && web3.value.success === true;
+    const apiOk = api.status === 'fulfilled' && api.value.body.success === true;
 
-    if (!workerResult.success) {
-        console.warn("Worker API failed, but continuing...");
+    if (!web3Ok) console.warn("Web3Forms failed", web3);
+    if (!apiOk) console.warn("Registration API failed", api);
+
+    if (apiOk || web3Ok) {
+        showMessage(successMessage);
+        form.reset();
+        countOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.count === '1'));
+        participantCountInput.value = 1;
+        generateParticipantForms(1);
+    } else {
+        // Show the validation message from the API when there is one
+        const apiError = api.status === 'fulfilled' && api.value.body.error;
+        if (apiError && api.value.status === 400) {
+            errorMessage.textContent = '✗ ' + apiError;
+        }
+        showMessage(errorMessage);
     }
 
-} catch (error) {
-    console.error("Error occurred, but continuing anyway:", error);
-
-} finally {
-
-    // ✔︎ Safety checks to prevent null errors
-    const successBox = document.getElementById("successMessage");
-    const errorBox = document.getElementById("errorMessage");
-    const submitBtn = form.querySelector(".submit-btn");
-
-    if (successBox) successBox.style.display = "block";
-    if (errorBox) errorBox.style.display = "none";
-
-    // Reset form safely
-    form.reset();
-    generateParticipantForms(1);
-
-    // Scroll to success box if found
-    if (successBox) {
-        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-
-    // Hide success box after 5s
-    setTimeout(() => {
-        if (successBox) successBox.style.display = "none";
-    }, 60000);
-
-    // Restore submit button safely
-    if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Submit Registration";
-    }
-}
-
-
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit Registration';
 });
 </script>
 
@@ -1354,82 +1348,7 @@ try {
 
 
 
-<script>
-  const backendUrl = "https://tk-sports-api.timosteen22.workers.dev";
 
-  document.getElementById("registrationForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const submitBtn = form.querySelector(".submit-btn");
-    const successMessage = document.getElementById("successMessage");
-    const errorMessage = document.getElementById("errorMessage");
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Submitting...";
-
-    try {
-      const formData = new FormData(form);
-
-      const parent_info = {
-        email: formData.get("parent_email"),
-        firstname: formData.get("parent_firstname"),
-        lastname: formData.get("parent_lastname"),
-        dob: formData.get("parent_dob"),
-        address: formData.get("parent_address"),
-        postcode: formData.get("parent_postcode"),
-        city: formData.get("parent_city"),
-        country: formData.get("parent_country"),
-        phone: formData.get("parent_phone"),
-      };
-
-      const participants = [];
-      const count = parseInt(formData.get("participant_count"));
-      for (let i = 1; i <= count; i++) {
-        participants.push({
-          firstname: formData.get(`participant_${i}_firstname`),
-          lastname: formData.get(`participant_${i}_lastname`),
-          dob: formData.get(`participant_${i}_dob`),
-          club: formData.get(`participant_${i}_club`),
-          position: formData.get(`participant_${i}_position`),
-          tshirt: formData.get(`participant_${i}_tshirt`),
-          allergy: formData.get(`participant_${i}_allergy`),
-          other: formData.get(`participant_${i}_other`),
-        });
-      }
-
-      const payload = {
-        email: parent_info.email,
-        name: `${parent_info.firstname} ${parent_info.lastname}`,
-        parent_info,
-        participants,
-      };
-
-      const res = await fetch(`${backendUrl}/send-confirmation`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      const result = await res.json();
-
-      if (result.success) {
-        successMessage.style.display = "block";
-        errorMessage.style.display = "none";
-        form.reset();
-        window.scrollTo({ top: successMessage.offsetTop - 50, behavior: "smooth" });
-      } else {
-        throw new Error(result.error || "Sending failed");
-      }
-    } catch (err) {
-      console.error(err);
-      successMessage.style.display = "none";
-      errorMessage.style.display = "block";
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = "Submit Registration";
-    }
-  });
-</script>
     <!-- Contact Section -->
     <!-- Contact Section -->
 <!-- Contact Section -->
@@ -1464,6 +1383,7 @@ try {
         
                 <div class="col-md-7">
         <form id="contactForm" novalidate>
+          <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <h4 class="mb-4">Contact us</h4>
           <div class="row">
             <div class="form-group col-sm-4 mb-3">
@@ -1483,63 +1403,7 @@ try {
             </div>
           </div>
         </form>
-         <script>
-
-
-
-
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      const form = e.target;
-
-      // Simpele HTML5 validatie check
-      if (!form.checkValidity()) {
-        alert("Vul alstublieft alle velden correct in.");
-        return;
-      }
-
-      // Controleer cooldown 10 minuten
-      const lastSent = localStorage.getItem("lastFormSent");
-      const now = Date.now();
-      if (lastSent && now - parseInt(lastSent) < 10 * 60 * 1000) {
-        alert("Je kunt dit formulier maar één keer per 10 minuten indienen.");
-        return;
-      }
-
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        subject: form.subject.value.trim(),
-        message: form.message.value.trim()
-      };
-
-      const webhookURL = "https://discord.com/api/webhooks/1384532014316781617/Vx6U-aKN82omo0lPM07deoeA4n49eZMRpjK4KLwpsFkqFEA9JSu3kEcFWX1ftG5tSCVq";
-
-      const payload = {
-        content: `📬 **Nieuw bericht van contactformulier**\n\n**Naam:** ${data.name}\n**Email:** ${data.email}\n**Onderwerp:** ${data.subject}\n**Bericht:** ${data.message}`
-      };
-
-      try {
-        const response = await fetch(webhookURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-          localStorage.setItem("lastFormSent", now.toString());
-          alert("Bericht succesvol verzonden!");
-          form.reset();
-        } else {
-          alert("Er ging iets mis. Probeer het later opnieuw.");
-        }
-      } catch (error) {
-        console.error("Error sending message:", error);
-        alert("Fout bij verzenden.");
-      }
-    });
-  </script>
+         <script src="assets/js/contact-form.js"></script>
                 </div>
             </div>
 

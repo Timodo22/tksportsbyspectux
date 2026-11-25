@@ -11427,6 +11427,19 @@ textarea.form-control {
   overflow: hidden;
 }
 
+/* Thinner header for the sub pages (Specialists, Events, About us, Form) */
+.header.header-thin {
+  height: 55vh;
+  min-height: 360px;
+  max-height: 560px;
+}
+
+/* Home page hero: a bit less tall, but enough room for the event card */
+.header.header-home {
+  height: 85vh;
+  min-height: 640px;
+}
+
 /* Specifieke afbeelding voor de past events pagina */
 
 

@@ -118,7 +118,7 @@
     </style>
     
     <!-- Page Header -->
-    <header class="header">
+    <header class="header header-thin">
         <img src="assets/imgs/header.jpg" alt="Background" class="header-bg">
 
         <div class="overlay">
@@ -743,6 +743,7 @@ great ones, and we tackle them head-on.
         
                 <div class="col-md-7">
         <form id="contactForm" novalidate>
+          <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <h4 class="mb-4">Contact us</h4>
           <div class="row">
             <div class="form-group col-sm-4 mb-3">
@@ -762,59 +763,7 @@ great ones, and we tackle them head-on.
             </div>
           </div>
         </form>
-         <script>
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      const form = e.target;
-
-      // Simpele HTML5 validatie check
-      if (!form.checkValidity()) {
-        alert("Vul alstublieft alle velden correct in.");
-        return;
-      }
-
-      // Controleer cooldown 10 minuten
-      const lastSent = localStorage.getItem("lastFormSent");
-      const now = Date.now();
-      if (lastSent && now - parseInt(lastSent) < 10 * 60 * 1000) {
-        alert("Je kunt dit formulier maar één keer per 10 minuten indienen.");
-        return;
-      }
-
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        subject: form.subject.value.trim(),
-        message: form.message.value.trim()
-      };
-
-      const webhookURL = "https://discord.com/api/webhooks/1384532014316781617/Vx6U-aKN82omo0lPM07deoeA4n49eZMRpjK4KLwpsFkqFEA9JSu3kEcFWX1ftG5tSCVq";
-
-      const payload = {
-        content: `📬 **Nieuw bericht van contactformulier**\n\n**Naam:** ${data.name}\n**Email:** ${data.email}\n**Onderwerp:** ${data.subject}\n**Bericht:** ${data.message}`
-      };
-
-      try {
-        const response = await fetch(webhookURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-          localStorage.setItem("lastFormSent", now.toString());
-          alert("Bericht succesvol verzonden!");
-          form.reset();
-        } else {
-          alert("Er ging iets mis. Probeer het later opnieuw.");
-        }
-      } catch (error) {
-        console.error("Error sending message:", error);
-        alert("Fout bij verzenden.");
-      }
-    });
-  </script>
+         <script src="assets/js/contact-form.js"></script>
                 </div>
             </div>
 

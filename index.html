@@ -141,8 +141,12 @@
     </style>
     
     <!-- Page Header -->
-    <header class="header">
-        <img src="assets/imgs/header.jpg" alt="Background" class="header-bg">
+    <header class="header header-home">
+        <!-- Hero video: place the clip at assets/videos/hero.mp4 (muted, ~15-30s loop, max ~8MB).
+             Until the file exists the poster image is shown. -->
+        <video class="header-bg" autoplay muted loop playsinline preload="metadata" poster="assets/imgs/header.jpg" aria-hidden="true">
+            <source src="assets/videos/hero.mp4" type="video/mp4">
+        </video>
         <div class="overlay">
             <div class="header-flex-container">
                 <!-- Event Card First -->
@@ -150,12 +154,15 @@
                    <div class="event-card-container">
     <div class="event-card">
         <div class="event-card-front">
-            <div class="event-image" style="background-image: url('assets/imgs/swedencard.png');">
+            <div class="event-image event-image-solid">
+                <img src="assets/imgs/logo-white.png" alt="TK Sports Academy" class="solid-logo">
+                <span class="solid-x">&times;</span>
+                <span class="solid-partner">Färjestad CCM<br>Hockey Camp</span>
                 <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
             </div>
             <div class="event-info">
                 <div class="event-date">
-                    <i class="far fa-calendar-alt"></i> 28th April - 1st May
+                    <i class="far fa-calendar-alt"></i> 28th April - 30th April
                 </div>
                 <h3 class="event-title">Färjestad CCM x TK Sports academy</h3>
                 <p class="event-description">Elevate your game with SHL & NHL superstar coaches, and much more 💪🏋️</p>
@@ -186,7 +193,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Date</h5>
-                        <p>April 28th - 1st May</p>
+                        <p>28th April - 30th April</p>
                     </div>
                 </div>
 
@@ -216,7 +223,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Age Groups</h5>
-                        <p>u7-u11, u13-u15, u17-Eredivisie</p>
+                        <p>U7 - U13, U15 - U17</p>
                     </div>
                 </div>
 
@@ -226,7 +233,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Pricetag</h5>
-                        <p>599,-</p>
+                        <p>€475,- per participant</p>
                     </div>
                 </div>
             </div>
@@ -604,12 +611,13 @@
         <div class="modal-body">
             <div class="modal-section">
                 <h3>Take Your Game to the Next Level!</h3>
-                <p>Join us this Spring for an unforgettable week of elite hockey training — right here in Ijssportcentrum Eindhoven from <strong>28th April - 1st May</strong>!</p>
+                <p>Join us this Spring for an unforgettable camp of elite hockey training — right here in Ijssportcentrum Eindhoven!</p>
+                <p><strong>Date:</strong> 28th April - 30th April</p>
                 <p><strong>Location:</strong> Antoon Coolenlaan 3, 5644 RX Eindhoven, Netherlands</p>
             </div>
 
             <div class="price-highlight">
-                € 599 per participant
+                € 475 per participant
             </div>
 
             <div class="modal-section">
@@ -667,21 +675,18 @@
 
             <div class="modal-section">
                 <h3>Who Can Join</h3>
-                <p>We welcome players of all ages and will have 3 groups to ensure the best environment for all:</p>
+                <p>We welcome players of all ages and will have 2 groups to ensure the best environment for all:</p>
                 <div class="info-grid">
                     <div class="info-item">
                         <strong>Group 1</strong>
-                        <p>U17 - Eredivisie</p>
+                        <p>U7 - U13</p>
                     </div>
                     <div class="info-item">
                         <strong>Group 2</strong>
-                        <p>U13 - U15</p>
-                    </div>
-                    <div class="info-item">
-                        <strong>Group 3</strong>
-                        <p>U7 - U11</p>
+                        <p>U15 - U17</p>
                     </div>
                 </div>
+                <p style="margin-top: 15px; font-size: 0.9rem; font-style: italic;">*Groups are subject to change depending on final sign up numbers.</p>
             </div>
 
             <div class="modal-section">
@@ -691,21 +696,18 @@
                     <li>3 on-ice sessions per day focusing on skating, puck control, and game sense</li>
                     <li>Daily off-ice stickhandling and shooting drills</li>
                     <li>Mobility, strength, and conditioning sessions to boost your performance</li>
-                    <li>Lunch and snacks included to keep you fuelled and ready to play</li>
-
-                                        <div class="download-buttons" style="margin-top: 25px; text-align: center;">
-    <h4 style="color:#ff6e42; margin-bottom: 15px;">Download Schedule</h4>
-
-    <a href="assets/pdfs/U17-Eredivisie.pdf" download class="pdf-btn">U17 – Eredivisie</a>
-    <a href="assets/pdfs/U13-U15.pdf" download class="pdf-btn">U13 – U15</a>
-    <a href="assets/pdfs/U7-U11.pdf" download class="pdf-btn">U7 – U11</a>
-</div>
+                    <li>Lunch included to keep you fuelled and ready to play</li>
                 </ul>
             </div>
 
             <div class="modal-section">
                 <h3>Camp Fee</h3>
-                <p>Total costs amount to <strong>€599</strong>. Registration is confirmed with a <strong>€300 deposit</strong>.</p>
+                <p><strong>€475,- per person</strong>, paid as a <strong>one-time payment</strong> (no deposit).</p>
+                <p><strong>Family discounts:</strong></p>
+                <ul>
+                    <li>2 kids: €100,- discount from the total price</li>
+                    <li>3 kids: €200,- discount from the total price</li>
+                </ul>
                 <p>Once we receive your form, we'll contact you with all details to finalize your registration.</p>
             </div>
 
@@ -1062,6 +1064,36 @@ body {
     position: relative;
 }
 
+/* Solid colour card header (replaces the photo) */
+.event-image-solid {
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.event-image-solid .solid-logo {
+    height: 90px;
+    width: auto;
+}
+
+.event-image-solid .solid-x {
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.event-image-solid .solid-partner {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .flip-icon {
     position: absolute;
     top: 10px;
@@ -1399,8 +1431,8 @@ body {
         </script>
     
     <script>
-        // De datum waarop we willen aftellen (30 april 2025)
-        const countdownDate = new Date("April 28, 2026 00:00:00").getTime();
+        // Start of the next camp: 28 April 2027, 07:45 (Dutch time)
+        const countdownDate = new Date("2027-04-28T07:45:00+02:00").getTime();
     
         // Update de timer elke seconde
         const x = setInterval(function() {
@@ -1864,6 +1896,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const circleProgress = document.getElementById('circle-progress');
     const progressFraction = document.getElementById('progress-fraction');
     const progressCircleContainer = document.querySelector('.progress-circle-container');
+    // section after the "special" items; the circle hides once it comes into view
+    const aboutSection = document.getElementById('contact');
     
     // Icons
     const icon1 = document.getElementById('icon-1');
@@ -2207,6 +2241,7 @@ function updateProgress(index) {
         
                 <div class="col-md-7">
         <form id="contactForm" novalidate>
+          <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;" aria-hidden="true"><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
           <h4 class="mb-4">Contact us</h4>
           <div class="row">
             <div class="form-group col-sm-4 mb-3">
@@ -2226,59 +2261,7 @@ function updateProgress(index) {
             </div>
           </div>
         </form>
-         <script>
-    document.getElementById("contactForm").addEventListener("submit", async function(e) {
-      e.preventDefault();
-
-      const form = e.target;
-
-      // Simpele HTML5 validatie check
-      if (!form.checkValidity()) {
-        alert("Vul alstublieft alle velden correct in.");
-        return;
-      }
-
-      // Controleer cooldown 10 minuten
-      const lastSent = localStorage.getItem("lastFormSent");
-      const now = Date.now();
-      if (lastSent && now - parseInt(lastSent) < 10 * 60 * 1000) {
-        alert("Je kunt dit formulier maar één keer per 10 minuten indienen.");
-        return;
-      }
-
-      const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        subject: form.subject.value.trim(),
-        message: form.message.value.trim()
-      };
-
-      const webhookURL = "https://discord.com/api/webhooks/1384532014316781617/Vx6U-aKN82omo0lPM07deoeA4n49eZMRpjK4KLwpsFkqFEA9JSu3kEcFWX1ftG5tSCVq";
-
-      const payload = {
-        content: `📬 **Nieuw bericht van contactformulier**\n\n**Naam:** ${data.name}\n**Email:** ${data.email}\n**Onderwerp:** ${data.subject}\n**Bericht:** ${data.message}`
-      };
-
-      try {
-        const response = await fetch(webhookURL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        if (response.ok) {
-          localStorage.setItem("lastFormSent", now.toString());
-          alert("Bericht succesvol verzonden!");
-          form.reset();
-        } else {
-          alert("Er ging iets mis. Probeer het later opnieuw.");
-        }
-      } catch (error) {
-        console.error("Error sending message:", error);
-        alert("Fout bij verzenden.");
-      }
-    });
-  </script>
+         <script src="assets/js/contact-form.js"></script>
                 </div>
             </div>
 
