@@ -285,34 +285,42 @@
             position: relative;
         }
         
-        /* Solid colour card header (upcoming camp) */
-        .event-image-solid {
-            background: var(--primary-color);
+        /* Card photo with dark overlay and centred logos */
+        .event-image-branded::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .event-image-branded .card-logos {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 14px;
-            padding: 0 20px;
-            color: #fff;
+            gap: 12px;
+            padding: 0 18px;
         }
 
-        .event-image-solid .solid-logo {
-            height: 90px;
-            width: auto;
+        .event-image-branded .card-logos img {
+
+            display: block;
+
+            height: auto;
+
+            flex-shrink: 0;
+
         }
 
-        .event-image-solid .solid-x {
-            font-size: 2.2rem;
-            font-weight: 300;
-            line-height: 1;
-        }
+        .event-image-branded .logo-tk { width: 32%; }
+        .event-image-branded .card-logos.single .logo-tk { width: 40%; }
+        .event-image-branded .logo-x { width: 8%; }
+        .event-image-branded .logo-partner { width: 38%; }
 
-        .event-image-solid .solid-partner {
-            font-size: 1.15rem;
-            font-weight: 700;
-            line-height: 1.25;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .event-image-branded .flip-icon {
+            z-index: 2;
         }
 
         .flip-icon {
@@ -570,10 +578,12 @@
       <div class="event-card-container" id="farjestad-camp">
         <div class="event-card">
           <div class="event-card-front">
-            <div class="event-image event-image-solid">
-              <img src="assets/imgs/logo-white.png" alt="TK Sports Academy" class="solid-logo">
-              <span class="solid-x">&times;</span>
-              <span class="solid-partner">Färjestad CCM<br>Hockey Camp</span>
+            <div class="event-image event-image-branded" style="background-image: url('assets/imgs/camp-2027.jpg');">
+              <div class="card-logos">
+                <img src="assets/imgs/tk-logo-dark-bg.png" alt="TK Sports Academy" class="logo-tk">
+                <img src="assets/imgs/collab-x.png" alt="x" class="logo-x">
+                <img src="assets/imgs/farjestad-hockeycamp-logo.png" alt="Färjestad BK Hockey Camp powered by CCM" class="logo-partner">
+              </div>
               <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
             </div>
             <div class="event-info">
@@ -650,7 +660,10 @@
             <div class="event-card-container" id="carnival-camp">
                 <div class="event-card">
                     <div class="event-card-front">
-                        <div class="event-image" style="background-image: url('https://timodo22.github.io/tksportsbyspectux/assets/imgs/carnival_camp.jpg');">
+                        <div class="event-image event-image-branded" style="background-image: url('assets/imgs/carnival_camp.jpg');">
+                            <div class="card-logos single">
+                                <img src="assets/imgs/tk-logo-dark-bg.png" alt="TK Sports Academy" class="logo-tk">
+                            </div>
                             <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                         </div>
                         <div class="event-info">
@@ -696,7 +709,10 @@
             <div class="event-card-container" id="may-camp">
                 <div class="event-card">
                     <div class="event-card-front">
-                        <div class="event-image" style="background-image: url('assets/imgs/may_camp.jpg');">
+                        <div class="event-image event-image-branded" style="background-image: url('assets/imgs/may_camp.jpg');">
+                            <div class="card-logos single">
+                                <img src="assets/imgs/tk-logo-dark-bg.png" alt="TK Sports Academy" class="logo-tk">
+                            </div>
                             <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
                         </div>
                         <div class="event-info">
