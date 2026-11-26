@@ -170,7 +170,7 @@
                 <div class="event-footer">
                     <div class="event-details">
                         <div><i class="fas fa-map-marker-alt"></i> Ijssportcentrum Eindhoven</div>
-                        <div><i class="far fa-clock"></i>07:45 - 16:15</div>
+                        <div><i class="far fa-clock"></i>08:30 - 15:30</div>
                     </div>
                 </div>
                 <div class="click-hint">
@@ -204,7 +204,7 @@
                     </div>
                     <div class="back-detail-text">
                         <h5>Time</h5>
-                        <p>07:45 - 16:15</p>
+                        <p>08:30 - 15:30</p>
                     </div>
                 </div>
 
@@ -599,6 +599,45 @@
 }
 </style>
 
+<style>
+/* Compact popup: thinner header, footer and button (more room for content, esp. on phones) */
+.modal-header {
+    padding: 16px 64px 14px 24px;
+}
+.modal-header h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0;
+    line-height: 1.25;
+}
+.modal-content > .modal-close {
+    top: 12px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+}
+.modal-body {
+    max-height: calc(100vh - 220px);
+}
+.modal-footer {
+    padding: 12px 24px 14px;
+    border-top: 1px solid #eee;
+}
+.modal-signup-btn {
+    padding: 9px 34px;
+    font-size: 1rem;
+}
+@media (max-width: 768px) {
+    .modal-header h2 { font-size: 1.15rem; }
+    .modal-body { max-height: calc(100vh - 160px); }
+}
+@media (max-width: 576px) {
+    .modal-header { padding: 12px 56px 11px 16px; }
+    .modal-content > .modal-close { top: 8px; right: 10px; width: 30px; height: 30px; font-size: 18px; }
+    .modal-footer { padding: 10px 16px 12px; }
+    .modal-signup-btn { padding: 8px 28px; font-size: 0.95rem; }
+}
+</style>
 <!-- Modal Popup HTML -->
 <div class="modal-overlay" id="eventModal">
     <div class="modal-content">
@@ -615,10 +654,6 @@
                 <p>Join us this Spring for an unforgettable camp of elite hockey training — right here in Ijssportcentrum Eindhoven!</p>
                 <p><strong>Date:</strong> 28th April - 30th April</p>
                 <p><strong>Location:</strong> Antoon Coolenlaan 3, 5644 RX Eindhoven, Netherlands</p>
-            </div>
-
-            <div class="price-highlight">
-                € 475 per participant
             </div>
 
             <div class="modal-section">
@@ -1440,8 +1475,8 @@ body {
         </script>
     
     <script>
-        // Start of the next camp: 28 April 2027, 07:45 (Dutch time)
-        const countdownDate = new Date("2027-04-28T07:45:00+02:00").getTime();
+        // Start of the next camp: 28 April 2027, 08:30 (Dutch time)
+        const countdownDate = new Date("2027-04-28T08:30:00+02:00").getTime();
     
         // Update de timer elke seconde
         const x = setInterval(function() {
